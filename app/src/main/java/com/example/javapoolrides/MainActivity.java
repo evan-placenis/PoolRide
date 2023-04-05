@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setTitle("Home");
         Intent i = getIntent();
         //passing data to another activity with PutExtra
-        String userName = i.getStringExtra("Registation");
+        String userName = i.getStringExtra("Registration");
         ((TextView)findViewById(R.id.output)).setText("Hello " + userName);
     }
 

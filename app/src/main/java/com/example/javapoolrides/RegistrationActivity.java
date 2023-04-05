@@ -22,7 +22,7 @@ public class RegistrationActivity extends AppCompatActivity {
         Intent i = new Intent(this, MainActivity.class);
         //
         String message = ((EditText)findViewById(R.id.userName)).getText().toString();
-        i.putExtra("Registation", message);
+        i.putExtra("Registration", message);
 
         startActivity(i);
     }
