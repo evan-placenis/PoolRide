@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">PoolRide</string>
+
+    <string name="edit_account_button">Edit</string>
+    <string name="view_account_button">View</string>
+    <string name="request_ride_button">Request Ride</string>
+    <string name="submit_registration_button">Submit</string>
+
+    <string name="home_page">Home</string>
+    <string name="edit_account_page">Edit Account</string>
+    <string name="registration_page">Registration</string>
+</resources>
