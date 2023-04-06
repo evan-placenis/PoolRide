@@ -19,7 +19,7 @@ public class RegistrationActivity extends AppCompatActivity {
     public void submitForm(View v){
         //launch a new activity
 
-        Intent i = new Intent(this, MainActivity.class);
+        Intent i = new Intent(this, QuestionnaireActivity.class);
         //
         String message = ((EditText)findViewById(R.id.userName)).getText().toString();
         i.putExtra("Registration", message);

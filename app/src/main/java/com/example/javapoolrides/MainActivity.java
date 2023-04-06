@@ -18,10 +18,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setTitle("Home");
-        Intent i = getIntent();
-        //passing data to another activity with PutExtra
-        String userName = i.getStringExtra("Registration");
-        ((TextView)findViewById(R.id.output)).setText("Hello " + userName);
+        // Intent i = getIntent();
+        //passing data to another activity with PutExtra;
+        // String userName = i.getStringExtra("Registration");
+        // ((TextView)findViewById(R.id.output)).setText("Hello " + userName);
     }
 
     public void editAccount(View v){
