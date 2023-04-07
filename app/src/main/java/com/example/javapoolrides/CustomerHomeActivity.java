@@ -25,6 +25,17 @@ public class CustomerHomeActivity extends AppCompatActivity {
         Intent i = new Intent(this, EditActivity.class);
         startActivity(i);
     }
+
+    public void requestRide (View v) {
+        Intent i = new Intent(this, RidePrefsActivity.class);
+        startActivity(i);
+    }
+
+    public void scheduleRide (View v) {
+        Intent i = new Intent(this, ScheduleRideActivity.class);
+        startActivity(i);
+    }
+
     /*
     public void handleText(View v){
         //get input from user and apply it to output

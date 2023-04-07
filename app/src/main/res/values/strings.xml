@@ -9,4 +9,11 @@
     <string name="home_page">Home</string>
     <string name="edit_account_page">Edit Account</string>
     <string name="registration_page">Registration</string>
+    <string name="search_rides">Search</string>
+    <string name="select_car">Select</string>
+    <string name="cancel">Cancel</string>
+    <string name="view_map">Map</string>
+    <string name="view_ride_details">Ride Details</string>
+    <string name="schedule_ride">Schedule Ride</string>
+    <string name="schedule_submit">Schedule</string>
 </resources>

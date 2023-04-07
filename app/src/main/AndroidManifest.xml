@@ -18,6 +18,23 @@
             android:name=".ArrivalActivity"
             android:exported="false" />
         <activity
+            android:name=".ScheduleRideActivity"
+            android:exported="false"
+            android:parentActivityName=".CustomerHomeActivity" />
+        <activity
+            android:name=".ViewRideDetailsActivity"
+            android:exported="false"
+            android:parentActivityName=".CustomerRideActivity" />
+        <activity
+            android:name=".CustomerRideActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewRidesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RidePrefsActivity"
+            android:exported="false" />
+        <activity
             android:name=".DriverLoginActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
