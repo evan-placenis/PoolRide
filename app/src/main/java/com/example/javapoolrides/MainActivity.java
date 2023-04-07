@@ -17,47 +17,32 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setTitle("Home");
+        setTitle("PoolRide");
         // Intent i = getIntent();
         //passing data to another activity with PutExtra;
         // String userName = i.getStringExtra("Registration");
         // ((TextView)findViewById(R.id.output)).setText("Hello " + userName);
     }
 
-    public void editAccount(View v){
+    public void customerLogin(View v){
         //launch a new activity
 
-        Intent i = new Intent(this, EditActivity.class);
+        Intent i = new Intent(this, CustomerLoginActivity.class);
         startActivity(i);
     }
-    /*
-    public void handleText(View v){
-        //get input from user and apply it to output
-        EditText t = findViewById(R.id.source);
-        String input = t.getText().toString();
 
-        ((TextView)findViewById(R.id.output)).setText(input);
+    public void driverLogin(View v){
+        //launch a new activity
 
-        //MAKE ALERT
-        Toast.makeText(this,"ALERT", Toast.LENGTH_LONG).show();
+        Intent i = new Intent(this, DriverLoginActivity.class);
+        startActivity(i);
     }
-    public void disable(View v){
-        /* take action on a specific button
-        View myView = findViewById(R.id.button);
-        myView.setEnabled(false);
-        Button button = (Button) myView; //cast this myView as a button so we can call setText
-        button.setText("New Disabled");
-        */
 
-        /* take action on button in the parameter
-        v.setEnabled(false); //disable button from being clicked again
+    public void registration(View v){
+        //launch a new activity
 
-        Button button = (Button) v;
-        button.setText("Disabled"); //setting button text to disabled once clicked
-
-        Log.d("success", "Button Disabled");
-
-
+        Intent i = new Intent(this, RegistrationActivity.class);
+        startActivity(i);
     }
-    */
+
 }
