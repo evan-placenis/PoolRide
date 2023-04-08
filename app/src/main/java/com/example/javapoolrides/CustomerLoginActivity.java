@@ -3,6 +3,8 @@ package com.example.javapoolrides;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import com.example.javapoolrides.Databases.Customer.CustomerDatabase;
+import com.example.javapoolrides.Databases.Customer.Customer;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
