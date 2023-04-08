@@ -1,6 +1,7 @@
 package com.example.javapoolrides;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,6 +25,20 @@ public class MainActivity extends AppCompatActivity {
         //passing data to another activity with PutExtra;
         // String userName = i.getStringExtra("Registration");
         // ((TextView)findViewById(R.id.output)).setText("Hello " + userName);
+
+
+        CustomerDatabase db = Room.databaseBuilder(getApplicationContext(),
+                CustomerDatabase.class, "customer-database").build();
+        Customer joe = new Customer("Joe", "Test");
+        Customer peter = new Customer("Peter", "Test2");
+
+        db.customerDao().insertAll(joe,peter);
+
+        List<Customer> customerList = db.customerDao().getAllCustomers();
+
+        for(Customer list: customerList){
+            Log.d("customers", list.firstName + " " + list.lastName);
+        }
     }
 
     public void customerLogin(View v){
