@@ -1,4 +1,4 @@
-package com.example.javapoolrides;
+package com.example.javapoolrides.Databases.Customer;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
