@@ -15,8 +15,6 @@ public class DriverLoginActivity extends AppCompatActivity {
         setTitle("Driver Login");
     }
     public void driverHomePage(View v){
-        //launch a new activity
-
         Intent i = new Intent(this, DriverHomeActivity.class);
         startActivity(i);
     }
