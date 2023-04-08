@@ -19,9 +19,7 @@ public class CustomerHomeActivity extends AppCompatActivity {
         // ((TextView)findViewById(R.id.output)).setText("Hello " + userName);
     }
 
-    public void editAccount(View v){
-        //launch a new activity
-
+    public void viewAccount(View v){
         Intent i = new Intent(this, ViewAccountDetailsActivity.class);
         startActivity(i);
     }
@@ -33,6 +31,11 @@ public class CustomerHomeActivity extends AppCompatActivity {
 
     public void scheduleRide (View v) {
         Intent i = new Intent(this, ScheduleRideActivity.class);
+        startActivity(i);
+    }
+
+    public void quit (View v) {
+        Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
     }
 

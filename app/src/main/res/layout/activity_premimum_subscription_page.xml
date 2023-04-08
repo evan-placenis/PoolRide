@@ -127,7 +127,7 @@
         android:layout_marginBottom="224dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/icons8_administrator_male_50" />
+        app:srcCompat="@drawable/man" />
 
     <ImageView
         android:id="@+id/imageView7"
@@ -137,7 +137,7 @@
         android:layout_marginBottom="456dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/icons8_alarm_clock_50" />
+        app:srcCompat="@drawable/clock" />
 
     <ImageView
         android:id="@+id/imageView8"
@@ -147,7 +147,7 @@
         android:layout_marginBottom="300dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/icons8_loyalty_card_50" />
+        app:srcCompat="@drawable/coupon" />
 
     <ImageView
         android:id="@+id/imageView9"
@@ -157,7 +157,7 @@
         android:layout_marginBottom="144dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/icons8_open_book_50" />
+        app:srcCompat="@drawable/book" />
 
     <TextView
         android:id="@+id/textView31"
@@ -179,7 +179,7 @@
         android:layout_marginBottom="380dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/icons8_padlock_52" />
+        app:srcCompat="@drawable/unlock" />
 
     <TextView
         android:id="@+id/textView28"
