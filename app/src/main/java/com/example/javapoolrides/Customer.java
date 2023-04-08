@@ -10,14 +10,14 @@ public class Customer {
     @PrimaryKey(autoGenerate = true)
     public int uid;
 
-    @ColumnInfo(name = "first_name")
-    public String firstName;
+    @ColumnInfo(name = "username")
+    public String username;
 
-    @ColumnInfo(name = "last_name")
-    public String lastName;
+    @ColumnInfo(name = "password")
+    public String password;
 
-    public Customer(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Customer(String username, String password) {
+        this.username = username;
+        this.password = password;
     }
 }

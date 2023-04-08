@@ -29,18 +29,7 @@ public class MainActivity extends AppCompatActivity {
         // ((TextView)findViewById(R.id.output)).setText("Hello " + userName);
 
 
-        CustomerDatabase db = Room.databaseBuilder(getApplicationContext(),
-                CustomerDatabase.class, "customer-database").allowMainThreadQueries().build();
-        Customer joe = new Customer("Joe", "Test");
-        Customer peter = new Customer("Peter", "Test2");
 
-        db.customerDao().insertAll(joe,peter);
-
-        List<Customer> customerList = db.customerDao().getAllCustomers();
-
-        for(Customer list: customerList){
-            Log.d("customers", list.firstName + " " + list.lastName);
-        }
     }
 
     public void customerLogin(View v){

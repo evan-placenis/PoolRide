@@ -16,4 +16,6 @@
     <string name="view_ride_details">Ride Details</string>
     <string name="schedule_ride">Schedule Ride</string>
     <string name="schedule_submit">Schedule</string>
+    <string name="login_username">Username:</string>
+    <string name="login_password">Password:</string>
 </resources>
