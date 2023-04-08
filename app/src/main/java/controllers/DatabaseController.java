@@ -10,7 +10,7 @@ import com.example.javapoolrides.Databases.Customer.CustomerDatabase;;
 
 import java.util.List;
 
-public class DatabaseController extends AppCompatActivity {
+public class DatabaseController  extends AppCompatActivity {
     //Registration
     public boolean userAlreadyExists(String username, CustomerDatabase db){
         List<Customer> customerList = db.customerDao().getAllCustomers();

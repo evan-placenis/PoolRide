@@ -70,10 +70,17 @@
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".EditActivity"
-            android:exported="false"
-            android:label="Edit Account"
-            android:parentActivityName=".CustomerHomeActivity" />
+            android:name=".EditAccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DeleteAccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PremimumSubscriptionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewAccountDetailsActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
