@@ -10,6 +10,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.javapoolrides.Databases.Customer.Customer;
+import com.example.javapoolrides.Databases.Customer.CustomerDatabase;
+
 import java.util.List;
 
 import controllers.DatabaseController;

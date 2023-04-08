@@ -5,12 +5,12 @@ import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
-import com.example.javapoolrides.Customer;
-import com.example.javapoolrides.CustomerDatabase;
+import com.example.javapoolrides.Databases.Customer.Customer;
+import com.example.javapoolrides.Databases.Customer.CustomerDatabase;;
 
 import java.util.List;
 
-public class DatabaseController  extends AppCompatActivity {
+public class DatabaseController extends AppCompatActivity {
     //Registration
     public boolean userAlreadyExists(String username, CustomerDatabase db){
         List<Customer> customerList = db.customerDao().getAllCustomers();
