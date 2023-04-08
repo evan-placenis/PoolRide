@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import controllers.DatabaseController;
+
 public class CustomerLoginActivity extends AppCompatActivity {
 
     @Override
@@ -21,26 +23,25 @@ public class CustomerLoginActivity extends AppCompatActivity {
         setTitle("Customer Login");
     }
     public void customerHomePage(View v) {
-
         CustomerDatabase db = Room.databaseBuilder(getApplicationContext(),
                 CustomerDatabase.class, "customer-database").allowMainThreadQueries().build();
 
-//        Customer joe = new Customer("Joe", "Test");
-//        Customer peter = new Customer("Peter", "Test2");
-//
-//        db.customerDao().insertAll(joe,peter);
-//
-//        List<Customer> customerList = db.customerDao().getAllCustomers();
-//        for(Customer list: customerList){
-//            Log.d("customers", list.username + " " + list.password);
-//        }
-        String username = ((TextView)findViewById(R.id.customerLoginUsername)).getText().toString();
-        String password = ((TextView)findViewById(R.id.customerLoginPassword)).getText().toString();
+        //Obtain values from input fields
+        String username = ((TextView) findViewById(R.id.loginName)).getText().toString();
+        String password = ((TextView) findViewById(R.id.loginPassword)).getText().toString();
 
-        Customer customer = new Customer(username, password);
-        db.customerDao().insertAll(customer);
+        DatabaseController controller = new DatabaseController();
+        Boolean correctEntry = controller.loginUser(username,password, db);
+        db.clearAllTables();
 
-        Intent i = new Intent(this,CustomerHomeActivity.class);
-        startActivity(i);
+        //only enter user if there is existing user
+        if (correctEntry) {
+            Intent i = new Intent(this,CustomerHomeActivity.class);
+            startActivity(i);
+        }else{
+            //alert error message
+        }
+
+
     }
 }

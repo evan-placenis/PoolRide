@@ -18,4 +18,8 @@
     <string name="schedule_submit">Schedule</string>
     <string name="login_username">Username:</string>
     <string name="login_password">Password:</string>
+    <string name="registration_username">Username:</string>
+    <string name="registration_password">Password:</string>
+    <string name="registration_email">Email:</string>
+    <string name="registration_phone">Phone:</string>
 </resources>

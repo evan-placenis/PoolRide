@@ -16,8 +16,17 @@ public class Customer {
     @ColumnInfo(name = "password")
     public String password;
 
-    public Customer(String username, String password) {
+    @ColumnInfo(name = "email")
+    public String email;
+
+    @ColumnInfo(name = "phone")
+    public String phone;
+
+    public Customer(String username, String password, String email, String phone) {
         this.username = username;
         this.password = password;
+        this.email = email;
+        this.phone = phone;
+
     }
 }
