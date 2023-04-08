@@ -12,6 +12,18 @@
         android:theme="@style/Theme.JavaPoolRides"
         tools:targetApi="31">
         <activity
+            android:name=".EditAccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DeleteAccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PremimumSubscriptionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewAccountDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".RatingActivity"
             android:exported="false" />
         <activity
@@ -69,11 +81,6 @@
             android:name=".RegistrationActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".EditActivity"
-            android:exported="false"
-            android:label="Edit Account"
-            android:parentActivityName=".CustomerHomeActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
