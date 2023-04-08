@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import controllers.encryptionController;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -28,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         CustomerDatabase db = Room.databaseBuilder(getApplicationContext(),
-                CustomerDatabase.class, "customer-database").build();
+                CustomerDatabase.class, "customer-database").allowMainThreadQueries().build();
         Customer joe = new Customer("Joe", "Test");
         Customer peter = new Customer("Peter", "Test2");
 
