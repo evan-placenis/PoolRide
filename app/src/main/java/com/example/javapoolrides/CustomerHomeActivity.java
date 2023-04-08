@@ -22,7 +22,7 @@ public class CustomerHomeActivity extends AppCompatActivity {
     public void editAccount(View v){
         //launch a new activity
 
-        Intent i = new Intent(this, EditActivity.class);
+        Intent i = new Intent(this, ViewAccountDetailsActivity.class);
         startActivity(i);
     }
 

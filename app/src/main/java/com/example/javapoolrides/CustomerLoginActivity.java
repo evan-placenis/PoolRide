@@ -5,12 +5,15 @@ import androidx.room.Room;
 
 import com.example.javapoolrides.Databases.Customer.CustomerDatabase;
 import com.example.javapoolrides.Databases.Customer.Customer;
+
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -40,8 +43,16 @@ public class CustomerLoginActivity extends AppCompatActivity {
         if (correctEntry) {
             Intent i = new Intent(this,CustomerHomeActivity.class);
             startActivity(i);
+            Context context = getApplicationContext();
+            CharSequence text = "Successfully Login!";
+            Toast toast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
+            toast.show();
         }else{
             //alert error message
+            Context context = getApplicationContext();
+            CharSequence text = "User Does Not Exist!";
+            Toast toast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
+            toast.show();
         }
 
 
