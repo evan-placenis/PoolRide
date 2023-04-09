@@ -14,6 +14,7 @@ public class PremimumSubscriptionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_premimum_subscription_page);
+        setTitle("Subscription");
     }
 
     public void sub(View i) {

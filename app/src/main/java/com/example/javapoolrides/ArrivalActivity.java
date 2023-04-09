@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.android.gms.maps.MapView;
+
 public class ArrivalActivity extends AppCompatActivity {
 
     @Override
@@ -13,10 +15,13 @@ public class ArrivalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_arrival);
         setTitle("Arrival");
+        //Need API to work
+        //MapView mapView = findViewById(R.id.Arrival);
+        //mapView.onCreate(savedInstanceState);
     }
 
     public void returnHome(View v) {
-        Intent i = new Intent(this, MainActivity.class);
+        Intent i = new Intent(this, CustomerHomeActivity.class);
         startActivity(i);
     }
 
