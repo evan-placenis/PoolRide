@@ -43,7 +43,7 @@ public class Customer {
         this.phone = E.decrypt(phone, key);
         this.firstName = E.decrypt(firstName, key);
         this.lastName = E.decrypt(lastName, key);
-        this.rating = rating
+        this.rating = rating;
 
     }
 }

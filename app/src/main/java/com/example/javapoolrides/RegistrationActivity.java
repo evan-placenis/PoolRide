@@ -58,7 +58,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
         if(!correctEntry){
             Context context = getApplicationContext();
-            CharSequence text = "Invalid phone or email!";
+            CharSequence text = "Invalid credentials";
             Toast toast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
             toast.show();
             return;

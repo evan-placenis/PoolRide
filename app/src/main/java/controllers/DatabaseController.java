@@ -61,6 +61,7 @@ public class DatabaseController  extends AppCompatActivity {
     public boolean loginUser(String username,String password, CustomerDatabase db){
         List<Customer> customerList = db.customerDao().getAllCustomers();
         for(Customer customer: customerList){
+            Log.d("USERR LOGIN:", customer.username + " " + customer.password);
             if (customer.username.equals(username) && customer.password.equals(password)) {
                 return true;
             }

@@ -16,7 +16,7 @@ public class QuestionnaireActivity extends AppCompatActivity {
     }
 
     public void submit(View v) {
-        Intent i = new Intent(this, MainActivity.class);
+        Intent i = new Intent(this, CustomerHomeActivity.class);
         startActivity(i);
     }
 }
