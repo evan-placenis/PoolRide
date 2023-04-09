@@ -2,6 +2,7 @@ package com.example.javapoolrides.RegistrationActivities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -26,25 +27,30 @@ public class QuestionnaireActivity extends AppCompatActivity {
         RadioGroup silentGroup;
         RadioGroup tobaccoGroup;
 
-        RadioButton ageButton;
-        RadioButton silentButton;
-        RadioButton tobaccoButton;
+        RadioButton ageResult;
+        RadioButton silentResult;
+        RadioButton tobaccoResult;
 
         ageGroup = (RadioGroup) findViewById(R.id.Age);
         silentGroup = (RadioGroup) findViewById(R.id.Silent);
         tobaccoGroup = (RadioGroup) findViewById(R.id.Tobacco);
 
         int ageId = ageGroup.getCheckedRadioButtonId();
-        ageButton = (RadioButton) findViewById(ageId);
+        ageResult = (RadioButton) findViewById(ageId);
 
         int silentId = silentGroup.getCheckedRadioButtonId();
-        silentButton = (RadioButton) findViewById(silentId);
+        silentResult = (RadioButton) findViewById(silentId);
 
         int tobaccoId = tobaccoGroup.getCheckedRadioButtonId();
-        tobaccoButton = (RadioButton) findViewById(tobaccoId);
+        tobaccoResult = (RadioButton) findViewById(tobaccoId);
 
 //        Toast.makeText(QuestionnaireActivity.this,
 //                tobaccoButton.getText(), Toast.LENGTH_SHORT).show();
+
+//        ContentValues cv = new ContentValues();
+//        cv.put("question1", String.valueOf(ageResult));
+//        cv.put("question2", String.valueOf(silentResult));
+//        cv.put("question3", String.valueOf(ageResult));
 
         Intent i = new Intent(this, CustomerHomeActivity.class);
         startActivity(i);
