@@ -12,6 +12,7 @@ public class DeleteAccountActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete_account_page);
+        setTitle("Delete Account");
     }
 
     public void Confirm(View v){

@@ -19,4 +19,9 @@ public class RidePrefsActivity extends AppCompatActivity {
         Intent i = new Intent(this, ViewRidesActivity.class);
         startActivity(i);
     }
+
+    public void home (View v){
+        Intent i = new Intent(this, CustomerHomeActivity.class);
+        startActivity(i);
+    }
 }

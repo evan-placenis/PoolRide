@@ -27,30 +27,30 @@ public class MainActivity extends AppCompatActivity {
         //passing data to another activity with PutExtra;
         // String userName = i.getStringExtra("Registration");
         // ((TextView)findViewById(R.id.output)).setText("Hello " + userName);
-
-
-
     }
 
     public void customerLogin(View v){
-        //launch a new activity
-
         Intent i = new Intent(this, CustomerLoginActivity.class);
         startActivity(i);
     }
 
     public void driverLogin(View v){
-        //launch a new activity
-
         Intent i = new Intent(this, DriverLoginActivity.class);
         startActivity(i);
     }
 
     public void registration(View v){
-        //launch a new activity
-
         Intent i = new Intent(this, RegistrationActivity.class);
         startActivity(i);
     }
 
+    public void test(View v){
+        Intent i = new Intent(this, ArrivalActivity.class);
+        startActivity(i);
+    }
+
+    public void test1(View v){
+        Intent i = new Intent(this, ArrivalActivity.class);
+        startActivity(i);
+    }
 }

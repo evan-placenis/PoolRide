@@ -18,7 +18,7 @@ public class AcceptRideActivity extends AppCompatActivity {
     public void rideHomepage(View v){
         //launch a new activity
 
-        Intent i = new Intent(this, RideHomeActivity.class);
+        Intent i = new Intent(this, ViewRidesActivity.class);
         startActivity(i);
     }
 }
