@@ -15,6 +15,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.javapoolrides.Databases.Customer.CustomerDatabase;
+
 import java.util.List;
 
 import controllers.DatabaseController;
@@ -27,6 +29,7 @@ public class CustomerLoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_customer_login);
         setTitle("Customer Login");
     }
+
     public void customerHomePage(View v) {
         CustomerDatabase db = Room.databaseBuilder(getApplicationContext(),
                 CustomerDatabase.class, "customer-database").allowMainThreadQueries().build();
@@ -37,7 +40,6 @@ public class CustomerLoginActivity extends AppCompatActivity {
 
         DatabaseController controller = new DatabaseController();
         Boolean correctEntry = controller.loginUser(username,password, db);
-        db.clearAllTables();
 
         //only enter user if there is existing user
         if (correctEntry) {

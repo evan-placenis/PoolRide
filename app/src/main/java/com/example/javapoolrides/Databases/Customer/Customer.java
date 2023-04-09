@@ -22,11 +22,19 @@ public class Customer {
     @ColumnInfo(name = "phone")
     public String phone;
 
-    public Customer(String username, String password, String email, String phone) {
+    @ColumnInfo(name = "firstname")
+    public String firstName;
+
+    @ColumnInfo(name = "lastname")
+    public String lastName;
+
+    public Customer(String username, String password, String email, String phone, String firstName, String lastName) {
         this.username = username;
         this.password = password;
         this.email = email;
         this.phone = phone;
+        this.firstName = firstName;
+        this.lastName = lastName;
 
     }
 }

@@ -1,13 +1,19 @@
 package controllers;
 
-import android.util.Log;
-
 public class encryptionController {
+    private static final int key = 345;
 
-    public String getTitle(){
-        System.out.println("hello bbg");
-        Log.d("testing", "hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
-        return "Hello world";
+    // encryption
+    public static String encrypt(String in, int shift) {
+        return in;
     }
 
+    // Decryption method
+    public static String decrypt(String ciphertext, int shift) {
+        return ciphertext;
+    }
+
+    public static int getKey() {
+        return key;
+    }
 }

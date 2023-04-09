@@ -22,4 +22,10 @@
     <string name="registration_password">Password:</string>
     <string name="registration_email">Email:</string>
     <string name="registration_phone">Phone:</string>
+    <string name="registration_first_name">First Name:</string>
+    <string name="registration_last_name">Last Name:</string>
+    <string name="registerEmailHint">e.g. name@example.com</string>
+    <string name="registerPhoneHint">e.g. 6471640543</string>
+    <string name="registerFirstNameHint">e.g. John</string>
+    <string name="registerLastNameHint">e.g. Smith</string>
 </resources>
