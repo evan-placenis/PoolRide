@@ -43,8 +43,8 @@ public class QuestionnaireActivity extends AppCompatActivity {
         int tobaccoId = tobaccoGroup.getCheckedRadioButtonId();
         tobaccoButton = (RadioButton) findViewById(tobaccoId);
 
-        Toast.makeText(QuestionnaireActivity.this,
-                tobaccoButton.getText(), Toast.LENGTH_SHORT).show();
+//        Toast.makeText(QuestionnaireActivity.this,
+//                tobaccoButton.getText(), Toast.LENGTH_SHORT).show();
 
         Intent i = new Intent(this, CustomerHomeActivity.class);
         startActivity(i);
