@@ -46,14 +46,7 @@
             android:name=".CustomerHomeActivity"
             android:exported="false" />
         <activity
-            android:name=".RideHomeActivity"
-            android:exported="false" />
-        <activity
             android:name=".QRCodeActivity"
-            android:exported="false"
-            android:parentActivityName=".OfferRideActivity" />
-        <activity
-            android:name=".OfferRideActivity"
             android:exported="false"
             android:parentActivityName=".DriverHomeActivity" />
         <activity
@@ -90,6 +83,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="your API key"/>
     </application>
 
 </manifest>

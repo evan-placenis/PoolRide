@@ -12,6 +12,7 @@ public class ViewAccountDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_account_details_page);
+        setTitle("View Account Detail");
     }
 
     public void editProfile(View v){
