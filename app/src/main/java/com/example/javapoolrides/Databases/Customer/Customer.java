@@ -22,17 +22,22 @@ public class Customer {
     @ColumnInfo(name = "phone")
     public String phone;
 
+    @ColumnInfo(name = "rating")
+    public String rating;
+
+
     @ColumnInfo(name = "firstname")
     public String firstName;
 
     @ColumnInfo(name = "lastname")
     public String lastName;
 
-    public Customer(String username, String password, String email, String phone, String firstName, String lastName) {
+    public Customer(String username, String password, String email, String phone, String firstName, String lastName, String rating) {
         this.username = username;
         this.password = password;
         this.email = email;
         this.phone = phone;
+        this.rating = rating;
         this.firstName = firstName;
         this.lastName = lastName;
 

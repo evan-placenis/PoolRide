@@ -2,10 +2,15 @@ package controllers;
 
 import android.util.Log;
 
+import android.util.Log;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 import com.example.javapoolrides.Databases.Customer.Customer;
+import com.example.javapoolrides.Databases.Customer.CustomerDatabase;
+import com.example.javapoolrides.Databases.Driver.Driver;
+import com.example.javapoolrides.Databases.Driver.DriverDatabase;
 import com.example.javapoolrides.Databases.Customer.CustomerDatabase;;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -50,6 +55,7 @@ public class DatabaseController  extends AppCompatActivity {
 
         validInfo = validInfo && username.length() > 0 && password.length() > 0 &&
                 firstName.length() > 0 && lastName.length() > 0;
+        // (email.contains("@") && email.contains(".") && phone.length() == 10);
 
         return validInfo;
 
@@ -59,6 +65,15 @@ public class DatabaseController  extends AppCompatActivity {
         List<Customer> customerList = db.customerDao().getAllCustomers();
         for(Customer customer: customerList){
             if (customer.username.equals(username) && customer.password.equals(password)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    public boolean loginDriver(String username,String password, DriverDatabase db){
+        List<Driver> customerList = db.driverDao().getAllDrivers();
+        for(Driver driver: customerList){
+            if (driver.username.equals(username) && driver.password.equals(password)) {
                 return true;
             }
         }
