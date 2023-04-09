@@ -10,37 +10,30 @@
         android:id="@+id/arrivalText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="176dp"
-        android:layout_marginBottom="8dp"
         android:text="You have arrived at your destination!"
-        android:textSize="20sp"
+        android:textSize="22sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/ratingButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.138" />
+        tools:layout_editor_absoluteY="27dp" />
 
     <Button
         android:id="@+id/homeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="112dp"
         android:onClick="returnHome"
         android:text="Return Home"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:backgroundTint="#03A9F4"
+        tools:layout_editor_absoluteX="253dp"
+        tools:layout_editor_absoluteY="667dp" />
 
     <Button
         android:id="@+id/ratingButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
         android:onClick="ratingPage"
         android:text="Rate Driver"
-        app:layout_constraintBottom_toTopOf="@+id/homeButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:backgroundTint="#03A9F4"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="667dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
