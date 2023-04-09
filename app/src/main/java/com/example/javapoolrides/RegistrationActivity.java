@@ -45,6 +45,7 @@ public class RegistrationActivity extends AppCompatActivity {
         String firstName = ((TextView) findViewById(R.id.registerFirstName)).getText().toString();
         String lastName = ((TextView) findViewById(R.id.registerLastName)).getText().toString();
 
+
         //encrypt messages before passing
         int key = E.getKey();
         username = E.encrypt(username, key);
@@ -68,7 +69,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
         //only create user if there is no existing user
         if (!alreadyExists) {
-            String rating = "0";
+            String rating = "0"; //encrypt the rating possibly
             Customer customer = new Customer(username, password, email, phone, firstName, lastName,rating);
             db.customerDao().insertAll(customer);
             Intent i = new Intent(this, QuestionnaireActivity.class);

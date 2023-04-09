@@ -29,12 +29,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setTitle("PoolRide");
+
         //Inserting Drivers into database
         DriverDatabase db = Room.databaseBuilder(getApplicationContext(),
                 DriverDatabase.class, "driver-database").allowMainThreadQueries().build();
         db.clearAllTables();
-        String username = "evan";
-        String password = "test";
+
+        encryptionController E = new encryptionController();
+        int key = E.getKey();
+        String username = E.encrypt("evan",key);
+        String password = E.encrypt("test",key);
         Driver driver = new Driver(username, password);
         db.driverDao().insertAll(driver);
 

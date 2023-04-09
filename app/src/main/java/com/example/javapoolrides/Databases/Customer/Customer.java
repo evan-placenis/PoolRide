@@ -1,10 +1,10 @@
 package com.example.javapoolrides.Databases.Customer;
 
+import android.util.Log;
+
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-
-import controllers.encryptionController;
 
 @Entity
 public class Customer {
@@ -34,15 +34,14 @@ public class Customer {
     @ColumnInfo(name = "lastname")
     public String lastName;
 
+
     public Customer(String username, String password, String email, String phone, String firstName, String lastName, String rating) {
-        encryptionController E = new encryptionController();
-        int key = E.getKey();
-        this.username = E.decrypt(username, key);
-        this.password = E.decrypt(password, key);
-        this.email = E.decrypt(email, key);
-        this.phone = E.decrypt(phone, key);
-        this.firstName = E.decrypt(firstName, key);
-        this.lastName = E.decrypt(lastName, key);
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.phone = phone;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.rating = rating;
 
     }

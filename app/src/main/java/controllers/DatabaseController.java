@@ -12,6 +12,7 @@ import com.example.javapoolrides.Databases.Customer.CustomerDatabase;
 import com.example.javapoolrides.Databases.Driver.Driver;
 import com.example.javapoolrides.Databases.Driver.DriverDatabase;
 import com.example.javapoolrides.Databases.Customer.CustomerDatabase;;
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -52,26 +53,29 @@ public class DatabaseController  extends AppCompatActivity {
 
         validInfo = validInfo && username.length() > 0 && password.length() > 0 &&
                 firstName.length() > 0 && lastName.length() > 0;
-        // (email.contains("@") && email.contains(".") && phone.length() == 10);
 
         return validInfo;
 
     }
 
     public boolean loginUser(String username,String password, CustomerDatabase db){
+        encryptionController E = new encryptionController();
+        int key = E.getKey();
         List<Customer> customerList = db.customerDao().getAllCustomers();
         for(Customer customer: customerList){
-            Log.d("USERR LOGIN:", customer.username + " " + customer.password);
-            if (customer.username.equals(username) && customer.password.equals(password)) {
+
+            if (E.decrypt(customer.username,key).equals(username) && E.decrypt(customer.password,key).equals(password)){
                 return true;
             }
         }
         return false;
     }
     public boolean loginDriver(String username,String password, DriverDatabase db){
+        encryptionController E = new encryptionController();
+        int key = E.getKey();
         List<Driver> customerList = db.driverDao().getAllDrivers();
         for(Driver driver: customerList){
-            if (driver.username.equals(username) && driver.password.equals(password)) {
+            if (E.decrypt(driver.username,key).equals(username) && E.decrypt(driver.password,key).equals(password)) {
                 return true;
             }
         }
