@@ -15,7 +15,7 @@ public class QuestionnaireActivity extends AppCompatActivity {
         setTitle("Questionnaire");
     }
 
-    public void doSomething(View v) {
+    public void submit(View v) {
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
     }
