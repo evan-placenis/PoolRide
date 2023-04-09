@@ -16,7 +16,7 @@ public class DeleteAccountActivity extends AppCompatActivity {
 
     public void Confirm(View v){
         //database stuff
-        Intent i = new Intent(this, ViewAccountDetailsActivity.class);
+        Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
     }
 

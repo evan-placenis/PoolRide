@@ -50,7 +50,7 @@ public class CustomerLoginActivity extends AppCompatActivity {
         }else{
             //alert error message
             Context context = getApplicationContext();
-            CharSequence text = "User Does Not Exist!";
+            CharSequence text = "Incorrect username and password!";
             Toast toast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
             toast.show();
         }
