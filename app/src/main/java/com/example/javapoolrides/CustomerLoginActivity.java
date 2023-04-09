@@ -15,8 +15,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.javapoolrides.Databases.Customer.CustomerDatabase;
-
 import java.util.List;
 
 import controllers.DatabaseController;
@@ -29,7 +27,6 @@ public class CustomerLoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_customer_login);
         setTitle("Customer Login");
     }
-
     public void customerHomePage(View v) {
         CustomerDatabase db = Room.databaseBuilder(getApplicationContext(),
                 CustomerDatabase.class, "customer-database").allowMainThreadQueries().build();
@@ -40,15 +37,16 @@ public class CustomerLoginActivity extends AppCompatActivity {
 
         DatabaseController controller = new DatabaseController();
         Boolean correctEntry = controller.loginUser(username,password, db);
+        //db.clearAllTables();
 
         //only enter user if there is existing user
         if (correctEntry) {
-            Intent i = new Intent(this,CustomerHomeActivity.class);
-            startActivity(i);
             Context context = getApplicationContext();
             CharSequence text = "Successfully Login!";
             Toast toast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
             toast.show();
+            Intent i = new Intent(this,CustomerHomeActivity.class);
+            startActivity(i);
         }else{
             //alert error message
             Context context = getApplicationContext();

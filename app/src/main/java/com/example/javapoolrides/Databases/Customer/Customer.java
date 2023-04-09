@@ -24,13 +24,17 @@ public class Customer {
     @ColumnInfo(name = "phone")
     public String phone;
 
+    @ColumnInfo(name = "rating")
+    public String rating;
+
+
     @ColumnInfo(name = "firstname")
     public String firstName;
 
     @ColumnInfo(name = "lastname")
     public String lastName;
 
-    public Customer(String username, String password, String email, String phone, String firstName, String lastName) {
+    public Customer(String username, String password, String email, String phone, String firstName, String lastName, String rating) {
         encryptionController E = new encryptionController();
         int key = E.getKey();
         this.username = E.decrypt(username, key);
@@ -39,6 +43,7 @@ public class Customer {
         this.phone = E.decrypt(phone, key);
         this.firstName = E.decrypt(firstName, key);
         this.lastName = E.decrypt(lastName, key);
+        this.rating = rating
 
     }
 }

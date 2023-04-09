@@ -58,7 +58,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
         if(!correctEntry){
             Context context = getApplicationContext();
-            CharSequence text = "Invalid credentials";
+            CharSequence text = "Invalid phone or email!";
             Toast toast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
             toast.show();
             return;
@@ -68,13 +68,16 @@ public class RegistrationActivity extends AppCompatActivity {
 
         //only create user if there is no existing user
         if (!alreadyExists) {
-            Customer customer = new Customer(username, password, email, phone, firstName, lastName);
+            String rating = "0";
+            Customer customer = new Customer(username, password, email, phone, firstName, lastName,rating);
             db.customerDao().insertAll(customer);
+            Intent i = new Intent(this, QuestionnaireActivity.class);
+            startActivity(i);
         }else{
-            //alert error message
+            Context context = getApplicationContext();
+            CharSequence text = "User already exists, try a new username!";
+            Toast toast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
+            toast.show();
         }
-        Intent i = new Intent(this, QuestionnaireActivity.class);
-        startActivity(i);
-
     }
 }
