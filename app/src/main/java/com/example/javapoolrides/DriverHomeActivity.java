@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.google.android.gms.maps.MapView;
+import com.example.javapoolrides.DriverRideActivities.QRCodeActivity;
 
 public class DriverHomeActivity extends AppCompatActivity {
     private Boolean Offering = Boolean.FALSE;

@@ -1,20 +1,18 @@
-package com.example.javapoolrides;
+package com.example.javapoolrides.RegistrationActivities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 import com.example.javapoolrides.Databases.Customer.Customer;
 import com.example.javapoolrides.Databases.Customer.CustomerDatabase;
+import com.example.javapoolrides.R;
+import com.example.javapoolrides.RegistrationActivities.QuestionnaireActivity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.ArrayList;
 
 import controllers.DatabaseController;
 import controllers.encryptionController;

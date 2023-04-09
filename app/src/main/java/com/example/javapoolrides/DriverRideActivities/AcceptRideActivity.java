@@ -1,10 +1,13 @@
-package com.example.javapoolrides;
+package com.example.javapoolrides.DriverRideActivities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.javapoolrides.CustomerRideActivities.ViewRidesActivity;
+import com.example.javapoolrides.R;
 
 public class AcceptRideActivity extends AppCompatActivity {
 

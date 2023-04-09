@@ -6,18 +6,14 @@ import androidx.room.Room;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.javapoolrides.Databases.Customer.Customer;
+import com.example.javapoolrides.CustomerRideActivities.ArrivalActivity;
 import com.example.javapoolrides.Databases.Driver.Driver;
 import com.example.javapoolrides.Databases.Driver.DriverDatabase;
-
-import java.util.List;
+import com.example.javapoolrides.LoginActivities.CustomerLoginActivity;
+import com.example.javapoolrides.LoginActivities.DriverLoginActivity;
+import com.example.javapoolrides.RegistrationActivities.RegistrationActivity;
 
 import controllers.encryptionController;
 

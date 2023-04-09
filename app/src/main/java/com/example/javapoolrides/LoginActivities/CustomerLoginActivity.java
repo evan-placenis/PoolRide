@@ -1,10 +1,12 @@
-package com.example.javapoolrides;
+package com.example.javapoolrides.LoginActivities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import com.example.javapoolrides.CustomerHomeActivity;
 import com.example.javapoolrides.Databases.Customer.CustomerDatabase;
 import com.example.javapoolrides.Databases.Customer.Customer;
+import com.example.javapoolrides.R;
 
 import android.content.Context;
 import android.content.Intent;
@@ -45,7 +47,7 @@ public class CustomerLoginActivity extends AppCompatActivity {
             CharSequence text = "Successfully Login!";
             Toast toast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
             toast.show();
-            Intent i = new Intent(this,CustomerHomeActivity.class);
+            Intent i = new Intent(this, CustomerHomeActivity.class);
             startActivity(i);
         }else{
             //alert error message

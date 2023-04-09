@@ -1,8 +1,10 @@
-package com.example.javapoolrides;
+package com.example.javapoolrides.CustomerRideActivities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.javapoolrides.R;
 
 public class ViewRideDetailsActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.javapoolrides;
+package com.example.javapoolrides.CustomerAccountActivities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.javapoolrides.CustomerAccountActivities.ViewAccountDetailsActivity;
+import com.example.javapoolrides.R;
 
 public class PremimumSubscriptionActivity extends AppCompatActivity {
 

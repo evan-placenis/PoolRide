@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CustomerRideActivity">
+    tools:context=".CustomerRideActivities.CustomerRideActivity">
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/arrival"

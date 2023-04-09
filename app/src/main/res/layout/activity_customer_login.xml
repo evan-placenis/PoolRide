@@ -5,7 +5,7 @@
     android:id="@+id/customerLo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CustomerLoginActivity">
+    tools:context=".LoginActivities.CustomerLoginActivity">
 
     <Button
         android:id="@+id/button13"

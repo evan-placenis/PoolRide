@@ -12,67 +12,67 @@
         android:theme="@style/Theme.JavaPoolRides"
         tools:targetApi="31">
         <activity
-            android:name=".RatingActivity"
+            android:name=".CustomerRideActivities.RatingActivity"
             android:exported="false" />
         <activity
-            android:name=".ArrivalActivity"
+            android:name=".CustomerRideActivities.ArrivalActivity"
             android:exported="false" />
         <activity
-            android:name=".ScheduleRideActivity"
+            android:name=".CustomerRideActivities.ScheduleRideActivity"
             android:exported="false"
             android:parentActivityName=".CustomerHomeActivity" />
         <activity
-            android:name=".ViewRideDetailsActivity"
+            android:name=".CustomerRideActivities.ViewRideDetailsActivity"
             android:exported="false"
-            android:parentActivityName=".CustomerRideActivity" />
+            android:parentActivityName=".CustomerRideActivities.CustomerRideActivity" />
         <activity
-            android:name=".CustomerRideActivity"
+            android:name=".CustomerRideActivities.CustomerRideActivity"
             android:exported="false" />
         <activity
-            android:name=".ViewRidesActivity"
+            android:name=".CustomerRideActivities.ViewRidesActivity"
             android:exported="false" />
         <activity
-            android:name=".RidePrefsActivity"
+            android:name=".CustomerRideActivities.RidePrefsActivity"
             android:exported="false" />
         <activity
-            android:name=".DriverLoginActivity"
+            android:name=".LoginActivities.DriverLoginActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".CustomerLoginActivity"
+            android:name=".LoginActivities.CustomerLoginActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".CustomerHomeActivity"
             android:exported="false" />
         <activity
-            android:name=".QRCodeActivity"
+            android:name=".DriverRideActivities.QRCodeActivity"
             android:exported="false"
             android:parentActivityName=".DriverHomeActivity" />
         <activity
-            android:name=".AcceptRideActivity"
+            android:name=".DriverRideActivities.AcceptRideActivity"
             android:exported="false" />
         <activity
             android:name=".DriverHomeActivity"
             android:exported="false" />
         <activity
-            android:name=".QuestionnaireActivity"
+            android:name=".RegistrationActivities.QuestionnaireActivity"
             android:exported="false" />
         <activity
-            android:name=".RegistrationActivity"
+            android:name=".RegistrationActivities.RegistrationActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".EditAccountActivity"
+            android:name=".CustomerAccountActivities.EditAccountActivity"
             android:exported="false" />
         <activity
-            android:name=".DeleteAccountActivity"
+            android:name=".CustomerAccountActivities.DeleteAccountActivity"
             android:exported="false" />
         <activity
-            android:name=".PremimumSubscriptionActivity"
+            android:name=".CustomerAccountActivities.PremimumSubscriptionActivity"
             android:exported="false" />
         <activity
-            android:name=".ViewAccountDetailsActivity"
+            android:name=".CustomerAccountActivities.ViewAccountDetailsActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

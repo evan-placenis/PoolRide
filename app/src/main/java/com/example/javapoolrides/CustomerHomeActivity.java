@@ -6,6 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.javapoolrides.CustomerAccountActivities.ViewAccountDetailsActivity;
+import com.example.javapoolrides.CustomerRideActivities.RidePrefsActivity;
+import com.example.javapoolrides.CustomerRideActivities.ScheduleRideActivity;
+
 public class CustomerHomeActivity extends AppCompatActivity {
 
     @Override

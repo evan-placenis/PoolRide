@@ -1,4 +1,4 @@
-package com.example.javapoolrides;
+package com.example.javapoolrides.LoginActivities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.example.javapoolrides.Databases.Customer.CustomerDatabase;
 import com.example.javapoolrides.Databases.Driver.DriverDatabase;
+import com.example.javapoolrides.DriverHomeActivity;
+import com.example.javapoolrides.R;
 
 import controllers.DatabaseController;
 
