@@ -27,15 +27,22 @@ public class Customer {
     @ColumnInfo(name = "rating")
     public String rating;
 
-
     @ColumnInfo(name = "firstname")
     public String firstName;
 
     @ColumnInfo(name = "lastname")
     public String lastName;
 
+    @ColumnInfo(name = "q1")
+    public String q1;
 
-    public Customer(String username, String password, String email, String phone, String firstName, String lastName, String rating) {
+    @ColumnInfo(name = "q2")
+    public String q2;
+
+    @ColumnInfo(name = "q3")
+    public String q3;
+
+    public Customer(String username, String password, String email, String phone, String firstName, String lastName, String rating, String q1, String q2, String q3) {
         this.username = username;
         this.password = password;
         this.email = email;
@@ -43,6 +50,9 @@ public class Customer {
         this.firstName = firstName;
         this.lastName = lastName;
         this.rating = rating;
+        this.q1 = q1;
+        this.q2 = q2;
+        this.q3 = q3;
 
     }
 }
