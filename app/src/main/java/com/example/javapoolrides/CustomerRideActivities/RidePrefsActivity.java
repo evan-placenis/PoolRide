@@ -1,12 +1,15 @@
 package com.example.javapoolrides.CustomerRideActivities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import com.example.javapoolrides.CustomerHomeActivity;
+import com.example.javapoolrides.Databases.Customer.CustomerDatabase;
+import com.example.javapoolrides.Databases.Order.OrderDatabase;
 import com.example.javapoolrides.R;
 
 public class RidePrefsActivity extends AppCompatActivity {
@@ -19,8 +22,16 @@ public class RidePrefsActivity extends AppCompatActivity {
     }
 
     public void submitPrefs (View v) {
+        //Get data
+
+        OrderDatabase db = Room.databaseBuilder(getApplicationContext(),
+                OrderDatabase.class, "order-database").allowMainThreadQueries().build();
+
         Intent i = new Intent(this, ViewRidesActivity.class);
         startActivity(i);
+
+
+
     }
 
     public void home (View v){

@@ -67,10 +67,13 @@ public class RegistrationActivity extends AppCompatActivity {
 
         //only create user if there is no existing user
         if (!alreadyExists) {
-            String rating = "0"; //encrypt the rating possibly
-            Customer customer = new Customer(username, password, email, phone, firstName, lastName,rating, "no", "no", "no");
-            db.customerDao().insertAll(customer);
             Intent i = new Intent(this, QuestionnaireActivity.class);
+            i.putExtra("username", username);
+            i.putExtra("password", password);
+            i.putExtra("email", email);
+            i.putExtra("phone", phone);
+            i.putExtra("firstName", firstName);
+            i.putExtra("lastName", lastName);
             startActivity(i);
         }else{
             Context context = getApplicationContext();
