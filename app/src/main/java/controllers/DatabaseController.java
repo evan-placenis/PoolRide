@@ -15,6 +15,9 @@ import java.util.List;
 public class DatabaseController  extends AppCompatActivity {
     //Registration
     public boolean userAlreadyExists(String username, CustomerDatabase db){
+        encryptionController E = new encryptionController();
+        int key = E.getKey();
+        username = E.decrypt(username, key);
         List<Customer> customerList = db.customerDao().getAllCustomers();
         for(Customer customer: customerList){
             if (customer.username.equals(username)) {
@@ -28,25 +31,19 @@ public class DatabaseController  extends AppCompatActivity {
 
         encryptionController E = new encryptionController();
         int key = E.getKey();
-        E.decrypt(username, key);
-        E.decrypt(password, key);
-        E.decrypt(email, key);
-        E.decrypt(phone, key);
-        E.decrypt(firstName, key);
-        E.decrypt(lastName, key);
+        username = E.decrypt(username, key);
+        password = E.decrypt(password, key);
+        email = E.decrypt(email, key);
+        phone = E.decrypt(phone, key);
+        firstName = E.decrypt(firstName, key);
+        lastName = E.decrypt(lastName, key);
 
         Pattern emailPattern = Pattern.compile("^(.+)@(.+)$");
         Pattern phonePattern = Pattern.compile("\\d{10}");
 
         Matcher emailMatcher = emailPattern.matcher(email);
         Matcher phoneMatcher = phonePattern.matcher(phone);
-        Log.i("TEST!", emailMatcher.find() + " " + phoneMatcher.find());
         boolean validInfo = emailMatcher.find() && phoneMatcher.find();
-
-        Log.i("TEST!", "username: " + username);
-        Log.i("TEST!", "password: " + password);
-        Log.i("TEST!", "first name: " + firstName);
-        Log.i("TEST!", "last name: " + lastName);
 
         validInfo = validInfo && username.length() > 0 && password.length() > 0 &&
                 firstName.length() > 0 && lastName.length() > 0;
