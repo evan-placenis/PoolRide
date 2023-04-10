@@ -18,70 +18,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <ScrollView
-        android:layout_width="321dp"
-        android:layout_height="595dp"
-        android:layout_marginTop="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView14"
-                android:layout_width="match_parent"
-                android:layout_height="267dp"
-                android:text="Pref 1:" />
-
-            <Switch
-                android:id="@+id/shareSwitch"
-                android:layout_width="match_parent"
-                android:layout_height="84dp"
-                android:text="Ride Share" />
-
-            <Switch
-                android:id="@+id/accessibilitySwitch"
-                android:layout_width="match_parent"
-                android:layout_height="76dp"
-                android:text="Accessibility" />
-
-            <TextView
-                android:id="@+id/textView15"
-                android:layout_width="match_parent"
-                android:layout_height="139dp"
-                android:text="You have scrolled to " />
-
-            <Switch
-                android:id="@+id/petSwitch"
-                android:layout_width="match_parent"
-                android:layout_height="79dp"
-                android:text="Pet Friendly" />
-
-            <Switch
-                android:id="@+id/switch5"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:text="Switch" />
-
-            <Switch
-                android:id="@+id/switch6"
-                android:layout_width="match_parent"
-                android:layout_height="89dp"
-                android:text="Switch" />
-
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="match_parent"
-                android:layout_height="108dp"
-                android:text="you have reached the bottom" />
-
-        </LinearLayout>
-    </ScrollView>
-
     <Button
         android:id="@+id/submitPrefsButton5"
         android:layout_width="wrap_content"
@@ -93,5 +29,77 @@
         app:backgroundTint="#03A9F4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/PickUpLocation"
+        android:layout_width="332dp"
+        android:layout_height="43dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Pick Up Location"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.455"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.049" />
+
+    <EditText
+        android:id="@+id/Destination"
+        android:layout_width="331dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Destination"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PickUpLocation" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="334dp"
+        android:layout_height="334dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Destination"
+        app:layout_constraintVertical_bias="0.513">
+
+        <Switch
+            android:id="@+id/shareSwitch"
+            android:layout_width="172dp"
+            android:layout_height="92dp"
+            android:layout_marginTop="4dp"
+            android:text="Ride Share"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.024"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Switch
+            android:id="@+id/petSwitch"
+            android:layout_width="172dp"
+            android:layout_height="91dp"
+            android:layout_marginTop="8dp"
+            android:text="Pet Friendly"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.024"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shareSwitch" />
+
+        <Switch
+            android:id="@+id/accessibilitySwitch"
+            android:layout_width="171dp"
+            android:layout_height="94dp"
+            android:text="Accessibility"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.024"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/petSwitch"
+            app:layout_constraintVertical_bias="0.14" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
