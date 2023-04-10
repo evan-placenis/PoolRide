@@ -24,17 +24,24 @@ public class CustomerHomeActivity extends AppCompatActivity {
     }
 
     public void viewAccount(View v){
+        String username = getIntent().getStringExtra("username");
         Intent i = new Intent(this, ViewAccountDetailsActivity.class);
+        i.putExtra("username", username);
         startActivity(i);
     }
 
     public void requestRide (View v) {
+        //This might not work if it goes to another page first
+        String username = getIntent().getStringExtra("username");
         Intent i = new Intent(this, RidePrefsActivity.class);
+        i.putExtra("username", username);
         startActivity(i);
     }
 
     public void scheduleRide (View v) {
+        String username = getIntent().getStringExtra("username");
         Intent i = new Intent(this, ScheduleRideActivity.class);
+        i.putExtra("username", username);
         startActivity(i);
     }
 

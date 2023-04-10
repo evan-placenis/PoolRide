@@ -81,6 +81,7 @@ public class QuestionnaireActivity extends AppCompatActivity {
         db.customerDao().insertAll(customer);
 
         Intent i = new Intent(this, CustomerHomeActivity.class);
+        i.putExtra("username", username);
         startActivity(i);
     }
 }

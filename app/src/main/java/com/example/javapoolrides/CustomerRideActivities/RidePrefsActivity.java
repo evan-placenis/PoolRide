@@ -3,17 +3,27 @@ package com.example.javapoolrides.CustomerRideActivities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.util.Pair;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.Toast;
+import android.widget.Button;
 
 import com.example.javapoolrides.CustomerHomeActivity;
 import com.example.javapoolrides.Databases.Customer.CustomerDatabase;
 import com.example.javapoolrides.Databases.Order.OrderDatabase;
 import com.example.javapoolrides.R;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import controllers.CustomerRequestingRideControl;
 
 public class RidePrefsActivity extends AppCompatActivity {
 
@@ -25,11 +35,15 @@ public class RidePrefsActivity extends AppCompatActivity {
     }
 
     public void submitPrefs (View v) {
-        //Get data
-
-        OrderDatabase db = Room.databaseBuilder(getApplicationContext(),
+        OrderDatabase dbO = Room.databaseBuilder(getApplicationContext(),
                 OrderDatabase.class, "order-database").allowMainThreadQueries().build();
 
+        CustomerDatabase dbC = Room.databaseBuilder(getApplicationContext(),
+                CustomerDatabase.class, "customer-database").allowMainThreadQueries().build();
+
+        String username = getIntent().getStringExtra("username");//Obtain the name of the user in the session
+
+        //Obtain Data From Page
         Switch shareSwitch = (Switch) findViewById(R.id.shareSwitch);
         Switch accessibilitySwitch = (Switch) findViewById(R.id.accessibilitySwitch);
         Switch petSwitch = (Switch) findViewById(R.id.petSwitch);
@@ -37,19 +51,55 @@ public class RidePrefsActivity extends AppCompatActivity {
         boolean share = shareSwitch.isChecked();
         boolean accessibility = accessibilitySwitch.isChecked();
         boolean pet = petSwitch.isChecked();
+        //Add another to ask how many people are joining?
 
-//        if (share | accessibility | pet) {
-//            Toast.makeText(RidePrefsActivity.this,
-//                    "On", Toast.LENGTH_SHORT).show();
-//        }
 
+        CustomerRequestingRideControl reqRide = new CustomerRequestingRideControl();
+        Map<String,Integer> topThree = reqRide.findMatch(dbO,dbC,pet,accessibility, username);
+
+        //Update Buttons on next page with top three drivers
         Intent i = new Intent(this, ViewRidesActivity.class);
+        int count = 1;
+        for (Map.Entry<String, Integer> entry : topThree.entrySet()) {
+            Log.d("TOP THREE",entry.getKey() + entry.getValue().toString());
+            if (count == 1){
+                i.putExtra("firstChoice", entry.getKey() + " " +entry.getValue().toString() + "%");
+                i.putExtra("firstChoiceName", entry.getKey());
+            }else if(count == 2){
+                i.putExtra("secondChoice", entry.getKey() + " " +entry.getValue().toString()+ "%");
+                i.putExtra("secondChoiceName", entry.getKey());
+            }else if (count == 3){
+                i.putExtra("thirdChoice", entry.getKey() + " " +entry.getValue().toString()+ "%");
+                i.putExtra("ThirdChoiceName", entry.getKey());
+            }
+            count += 1;
+        }
+        //For scenarios where there are less than three available cars
+        //DISABLE BUTTON FROM BEING CLICKED IF IT IS, fix this functionality
+        while (count < 4){
+            if(count == 1){
+//                View myView = findViewById(R.id.firstChoice);
+//                myView.setEnabled(false);
 
+                Context context = getApplicationContext();
+                CharSequence text = "No available cars with current preferences, please try again later or change preferences";
+                Toast toast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
+                toast.show();
+                i.putExtra("firstChoice", "None");
+            }else if (count == 2){
+//                View myView = findViewById(R.id.secondChoice);
+//                myView.setEnabled(false);
+
+                i.putExtra("secondChoice", "None");
+            } else if (count == 3){
+//                View myView = findViewById(R.id.thirdChoice);
+//                myView.setEnabled(false);
+                i.putExtra("thirdChoice", "None");
+            }
+            count += 1;
+        }
 
         startActivity(i);
-
-
-
     }
 
     public void home (View v){

@@ -19,7 +19,9 @@ public class ScheduleRideActivity extends AppCompatActivity {
     }
 
     public void submitSchedule(View v){
+        String username = getIntent().getStringExtra("username");
         Intent i = new Intent(this, CustomerHomeActivity.class);
+        i.putExtra("username", username);
         startActivity(i);
     }
 

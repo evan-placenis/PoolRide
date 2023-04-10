@@ -4,6 +4,8 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import com.example.javapoolrides.Databases.Customer.Customer;
+
 @Entity
 public class Order {
     //key to distinguish the object
@@ -13,20 +15,36 @@ public class Order {
     @ColumnInfo(name = "driver")
     public String driver;
 
-    @ColumnInfo(name = "seats")
-    public String seats;
+    @ColumnInfo(name = "seatsAvail")
+    public String seatsAvail;
 
     @ColumnInfo(name = "location")
     public String location;
 
-    @ColumnInfo(name = "preferences")
-    public String preferences;
+    @ColumnInfo(name = "petFriendly")
+    public String petFriendly;
 
-    public Order(String driver, String seats, String location, String preferences) {
+    @ColumnInfo(name = "accessibility ")
+    public String accessibility ;
+
+    @ColumnInfo(name = "q1")
+    public String q1;
+
+    @ColumnInfo(name = "q2")
+    public String q2;
+
+    @ColumnInfo(name = "q3")
+    public String q3;
+
+
+    public Order(String driver, String seatsAvail, String location, String petFriendly, String accessibility ,String q1, String q2, String q3) {
         this.driver = driver;
-        this.seats = seats;
+        this.seatsAvail = seatsAvail;
         this.location = location;
-        this.preferences = preferences;
-
+        this.petFriendly= petFriendly;
+        this.accessibility = accessibility;
+        this.q1 = q1;
+        this.q2 = q2;
+        this.q3 = q3;
     }
 }

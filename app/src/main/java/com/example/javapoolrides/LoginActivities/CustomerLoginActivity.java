@@ -48,6 +48,7 @@ public class CustomerLoginActivity extends AppCompatActivity {
             Toast toast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
             toast.show();
             Intent i = new Intent(this, CustomerHomeActivity.class);
+            i.putExtra("username", username);
             startActivity(i);
         }else{
             //alert error message
