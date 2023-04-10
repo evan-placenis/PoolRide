@@ -38,13 +38,13 @@
                 android:text="Pref 1:" />
 
             <Switch
-                android:id="@+id/switch2"
+                android:id="@+id/shareSwitch"
                 android:layout_width="match_parent"
                 android:layout_height="84dp"
                 android:text="Ride Share" />
 
             <Switch
-                android:id="@+id/switch3"
+                android:id="@+id/accessibilitySwitch"
                 android:layout_width="match_parent"
                 android:layout_height="76dp"
                 android:text="Accessibility" />
@@ -56,10 +56,10 @@
                 android:text="You have scrolled to " />
 
             <Switch
-                android:id="@+id/switch4"
+                android:id="@+id/petSwitch"
                 android:layout_width="match_parent"
                 android:layout_height="79dp"
-                android:text="Accessibility" />
+                android:text="Pet Friendly" />
 
             <Switch
                 android:id="@+id/switch5"

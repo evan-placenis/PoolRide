@@ -60,20 +60,24 @@ public class QuestionnaireActivity extends AppCompatActivity {
         int tobaccoId = tobaccoGroup.getCheckedRadioButtonId();
         tobaccoResult = (RadioButton) findViewById(tobaccoId);
 
+        String age = (String) ageResult.getText();
+        String silent = (String) silentResult.getText();
+        String tobacco = (String) tobaccoResult.getText();
+
 //        Toast.makeText(QuestionnaireActivity.this,
 //                tobaccoButton.getText(), Toast.LENGTH_SHORT).show();
 
-        ContentValues cv = new ContentValues();
-        cv.put("question1", String.valueOf(ageResult));
-        cv.put("question2", String.valueOf(silentResult));
-        cv.put("question3", String.valueOf(ageResult));
+//        ContentValues cv = new ContentValues();
+//        cv.put("question1", String.valueOf(ageResult));
+//        cv.put("question2", String.valueOf(silentResult));
+//        cv.put("question3", String.valueOf(ageResult));
 
         //Update the customer database entry for
         CustomerDatabase db = Room.databaseBuilder(getApplicationContext(),
                 CustomerDatabase.class, "customer-database").allowMainThreadQueries().build();
 
         String rating = "none"; //encrypt the rating possibly
-        Customer customer = new Customer(username, password, email, phone, firstName, lastName,rating, String.valueOf(ageResult), silentResult.toString(), tobaccoResult.toString());
+        Customer customer = new Customer(username, password, email, phone, firstName, lastName,rating, age, silent, tobacco);
         db.customerDao().insertAll(customer);
 
         Intent i = new Intent(this, CustomerHomeActivity.class);
