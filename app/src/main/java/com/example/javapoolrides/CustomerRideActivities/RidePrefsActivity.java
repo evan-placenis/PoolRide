@@ -38,10 +38,10 @@ public class RidePrefsActivity extends AppCompatActivity {
         boolean accessibility = accessibilitySwitch.isChecked();
         boolean pet = petSwitch.isChecked();
 
-        if (share | accessibility | pet) {
-            Toast.makeText(RidePrefsActivity.this,
-                    "On", Toast.LENGTH_SHORT).show();
-        }
+//        if (share | accessibility | pet) {
+//            Toast.makeText(RidePrefsActivity.this,
+//                    "On", Toast.LENGTH_SHORT).show();
+//        }
 
         Intent i = new Intent(this, ViewRidesActivity.class);
 
