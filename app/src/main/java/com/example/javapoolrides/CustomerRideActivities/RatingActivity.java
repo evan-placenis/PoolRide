@@ -1,6 +1,7 @@
 package com.example.javapoolrides.CustomerRideActivities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +10,14 @@ import android.view.View;
 import android.widget.RatingBar;
 
 import com.example.javapoolrides.CustomerHomeActivity;
+import com.example.javapoolrides.Databases.Customer.Customer;
+import com.example.javapoolrides.Databases.Customer.CustomerDatabase;
+import com.example.javapoolrides.Databases.Order.Order;
 import com.example.javapoolrides.R;
+
+import java.util.List;
+
+import controllers.encryptionController;
 
 public class RatingActivity extends AppCompatActivity {
 
@@ -23,6 +31,30 @@ public class RatingActivity extends AppCompatActivity {
     public void submit(View v) {
         RatingBar mBar = (RatingBar) findViewById(R.id.ratingBar2);
         String rating = String.valueOf(mBar.getRating());
+        String username = getIntent().getStringExtra("username");
+
+        CustomerDatabase db = Room.databaseBuilder(getApplicationContext(),
+                CustomerDatabase.class, "customer-database").allowMainThreadQueries().build();
+        encryptionController E = new encryptionController();
+        int key = E.getKey();
+
+        List<Customer> customerList = db.customerDao().getAllCustomers();
+
+        for(Customer customer: customerList){
+            if((E.decrypt(customer.username,key).equals(username))){
+                if(customer.rating.equals("none")){
+                    customer.updateRating(rating);
+                    customer.updateTotalRating("1");
+                }else{
+                    int denominator = Integer.parseInt(customer.totalRating) + 1;
+                    int numerator = Integer.parseInt(customer.rating) + Integer.parseInt(rating);
+                    int newRating = numerator/denominator;
+                    customer.updateRating(String.valueOf(newRating));
+                    customer.updateTotalRating(String.valueOf(denominator));
+                }
+            }
+        }
+
         Intent i = new Intent(this, CustomerHomeActivity.class);
         startActivity(i);
     }

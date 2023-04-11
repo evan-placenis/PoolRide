@@ -80,7 +80,8 @@ public class QuestionnaireActivity extends AppCompatActivity {
                 CustomerDatabase.class, "customer-database").allowMainThreadQueries().build();
 
         String rating = "none"; //encrypt the rating possibly
-        Customer customer = new Customer(username, password, email, phone, firstName, lastName,rating, age, silent, tobacco, subscription);
+        String totalRating = "none";
+        Customer customer = new Customer(username, password, email, phone, firstName, lastName,rating, totalRating, age, silent, tobacco, subscription);
         db.customerDao().insertAll(customer);
 
         Intent i = new Intent(this, CustomerHomeActivity.class);

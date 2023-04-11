@@ -67,26 +67,5 @@ public class ScheduleRideActivity extends AppCompatActivity {
             Toast toast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
             toast.show();
         }
-
-
-
-
-
-
-//        this.date = date;
-//        this.time = time;
-//        this.destinationLoc = destinationLoc;
-//        this.pickupLoc = pickupLoc;
-//        this.username = username;
-
-
-
-
-
-
-
-
-
     }
-
 }

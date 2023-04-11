@@ -27,6 +27,9 @@ public class Customer {
     @ColumnInfo(name = "rating")
     public String rating;
 
+    @ColumnInfo(name = "totalRating")
+    public String totalRating;
+
     @ColumnInfo(name = "subscription")
     public String subscription;
 
@@ -45,13 +48,14 @@ public class Customer {
     @ColumnInfo(name = "q3")
     public String q3;
 
-    public Customer(String username, String password, String email, String phone, String firstName, String lastName, String rating, String q1, String q2, String q3, String subscription) {
+    public Customer(String username, String password, String email, String phone, String firstName, String lastName, String rating, String totalRating, String q1, String q2, String q3, String subscription) {
         this.username = username;
         this.password = password;
         this.email = email;
         this.phone = phone;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.totalRating = totalRating;
         this.rating = rating;
         this.q1 = q1;
         this.q2 = q2;
@@ -85,5 +89,11 @@ public class Customer {
 
     public void setSub(String sub) {
         this.subscription = sub;
+    }
+    public void updateRating(String rating) {
+        this.rating = rating;
+    }
+    public void updateTotalRating(String totalRating) {
+        this.totalRating = totalRating;
     }
 }
