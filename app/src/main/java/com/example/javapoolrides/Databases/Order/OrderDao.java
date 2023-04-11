@@ -19,6 +19,9 @@ public interface OrderDao {
     @Update
     void update(Order order);
 
+//    @Query("DELETE FROM [order]")
+//    void deleteUser();
+
     @Query("SELECT * FROM [order]")
     List<Order> getAllOrders();
 }

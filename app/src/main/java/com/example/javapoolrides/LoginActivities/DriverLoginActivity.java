@@ -37,6 +37,7 @@ public class DriverLoginActivity extends AppCompatActivity {
 
         if (correctEntry) {
             Intent i = new Intent(this, DriverHomeActivity.class);
+            i.putExtra("username", username);
             startActivity(i);
             Context context = getApplicationContext();
             CharSequence text = "Successfully Login!";

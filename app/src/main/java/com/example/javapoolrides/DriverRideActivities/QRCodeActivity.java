@@ -1,14 +1,18 @@
 package com.example.javapoolrides.DriverRideActivities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.widget.ImageView;
 
+import com.example.javapoolrides.Databases.Order.Order;
+import com.example.javapoolrides.Databases.Order.OrderDatabase;
 import com.example.javapoolrides.R;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.WriterException;
@@ -28,6 +32,27 @@ public class QRCodeActivity extends AppCompatActivity {
         Bitmap qrCodeBitmap = generateQRCode("Hello, world!");
         ImageView imageView = findViewById(R.id.QR);
         imageView.setImageBitmap(qrCodeBitmap);
+
+        String driver = getIntent().getStringExtra("driver");
+        Log.d("QR", driver);
+        String seatsAvail = getIntent().getStringExtra("seatsAvail");
+        String accessibility = getIntent().getStringExtra("accessibility");
+        String petFriendly = getIntent().getStringExtra("petFriendly");
+
+        //Hard coded for now. Change Later
+        String location = "location";
+        String q1 = "Yes";
+        String q2 ="Yes";
+        String q3 = "Yes";
+
+        OrderDatabase dbO = Room.databaseBuilder(getApplicationContext(),
+                OrderDatabase.class, "order-database").allowMainThreadQueries().build();
+
+        Order order = new Order(driver, seatsAvail,location, petFriendly,accessibility,q1,q2,q3);
+        dbO.orderDao().insertAll(order);
+
+        Intent i = new Intent(this, RideHomeActivity.class);
+        startActivity(i);
     }
 
     public static Bitmap generateQRCode(String text) {

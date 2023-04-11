@@ -38,6 +38,8 @@ public class QuestionnaireActivity extends AppCompatActivity {
         String phone = getIntent().getStringExtra("phone");
         String firstName = getIntent().getStringExtra("firstName");
         String lastName = getIntent().getStringExtra("lastName");
+        String subscription = getIntent().getStringExtra("sub");
+        Boolean premSubscription = Boolean.parseBoolean(subscription);
 
         RadioGroup ageGroup;
         RadioGroup silentGroup;
@@ -77,7 +79,7 @@ public class QuestionnaireActivity extends AppCompatActivity {
                 CustomerDatabase.class, "customer-database").allowMainThreadQueries().build();
 
         String rating = "none"; //encrypt the rating possibly
-        Customer customer = new Customer(username, password, email, phone, firstName, lastName,rating, age, silent, tobacco);
+        Customer customer = new Customer(username, password, email, phone, firstName, lastName,rating, age, silent, tobacco, premSubscription);
         db.customerDao().insertAll(customer);
 
         Intent i = new Intent(this, CustomerHomeActivity.class);

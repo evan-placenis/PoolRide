@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.javapoolrides.DriverRideActivities.OfferRideDetailsActivity;
 import com.example.javapoolrides.DriverRideActivities.QRCodeActivity;
 
 public class DriverHomeActivity extends AppCompatActivity {
@@ -23,7 +25,9 @@ public class DriverHomeActivity extends AppCompatActivity {
     }
 
     public void offerRide(View v){
-        Intent i = new Intent(this, QRCodeActivity.class);
+        String username = getIntent().getStringExtra("username");
+        Intent i = new Intent(this, OfferRideDetailsActivity.class);
+        i.putExtra("username", username);
         startActivity(i);
         Offering = Boolean.TRUE;
         Context context = getApplicationContext();

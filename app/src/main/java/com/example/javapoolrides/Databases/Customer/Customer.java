@@ -27,6 +27,9 @@ public class Customer {
     @ColumnInfo(name = "rating")
     public String rating;
 
+    @ColumnInfo(name = "subscription")
+    public Boolean subscription;
+
     @ColumnInfo(name = "firstname")
     public String firstName;
 
@@ -42,7 +45,7 @@ public class Customer {
     @ColumnInfo(name = "q3")
     public String q3;
 
-    public Customer(String username, String password, String email, String phone, String firstName, String lastName, String rating, String q1, String q2, String q3) {
+    public Customer(String username, String password, String email, String phone, String firstName, String lastName, String rating, String q1, String q2, String q3, Boolean subscription) {
         this.username = username;
         this.password = password;
         this.email = email;
@@ -53,6 +56,7 @@ public class Customer {
         this.q1 = q1;
         this.q2 = q2;
         this.q3 = q3;
+        this.subscription = subscription;
 
     }
 }

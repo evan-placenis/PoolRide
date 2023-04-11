@@ -37,13 +37,12 @@ public class MainActivity extends AppCompatActivity {
         //db.clearAllTables();
         List<Driver> driverList = db.driverDao().getAllDrivers();
         if(driverList.size() == 0){
-            encryptionController E = new encryptionController();
-            int key = E.getKey();
-            String username = E.encrypt("evan",key);
-            String password = E.encrypt("test",key);
-            Driver driver = new Driver(username, password);
-            db.driverDao().insertAll(driver);
-
+        encryptionController E = new encryptionController();
+        int key = E.getKey();
+        String username = E.encrypt("evan",key);
+        String password = E.encrypt("test",key);
+        Driver driver = new Driver(username, password);
+        db.driverDao().insertAll(driver);
         }
 
         //Insterting Cars into the database
@@ -83,22 +82,6 @@ public class MainActivity extends AppCompatActivity {
             Order order3 = new Order(drivvv, seatsss,locationnn, petFriendlyyy,accessibilityyy,que1,que2,que3);
             dbO.orderDao().insertAll(order1,order2,order3);
         }
-
-
-
-
-
-        //Make driver database
-//        this.driver = driver;
-//        this.seats = seats;
-//        this.location = location;
-//        this.petFriendly= petFriendly;
-//        this.accessibility = accessibility;
-//        this.q1 = q1;
-//        this.q2 = q2;
-//        this.q3 = q3;
-
-        db.clearAllTables();
 
     }
 

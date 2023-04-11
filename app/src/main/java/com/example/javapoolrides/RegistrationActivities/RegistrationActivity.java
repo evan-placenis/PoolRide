@@ -11,6 +11,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,6 +43,9 @@ public class RegistrationActivity extends AppCompatActivity {
         String phone = ((TextView) findViewById(R.id.phone)).getText().toString();
         String firstName = ((TextView) findViewById(R.id.registerFirstName)).getText().toString();
         String lastName = ((TextView) findViewById(R.id.registerLastName)).getText().toString();
+        Switch premSub = (Switch) findViewById(R.id.subSwitch);
+
+        boolean subscription = premSub.isChecked();
 
 
         //encrypt messages before passing
@@ -74,6 +78,7 @@ public class RegistrationActivity extends AppCompatActivity {
             i.putExtra("phone", phone);
             i.putExtra("firstName", firstName);
             i.putExtra("lastName", lastName);
+            i.putExtra("sub", subscription);
             startActivity(i);
         }else{
             Context context = getApplicationContext();

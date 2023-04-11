@@ -73,9 +73,10 @@ public class DatabaseController  extends AppCompatActivity {
     public boolean loginDriver(String username,String password, DriverDatabase db){
         encryptionController E = new encryptionController();
         int key = E.getKey();
-        List<Driver> customerList = db.driverDao().getAllDrivers();
-        for(Driver driver: customerList){
+        List<Driver> driverList = db.driverDao().getAllDrivers();
+        for(Driver driver: driverList){
             if (E.decrypt(driver.username,key).equals(username) && E.decrypt(driver.password,key).equals(password)) {
+            //if (driver.username.equals(username) && driver.password.equals(password)) {
                 return true;
             }
         }
