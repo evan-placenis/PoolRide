@@ -19,16 +19,25 @@ public class ViewAccountDetailsActivity extends AppCompatActivity {
     }
 
     public void editProfile(View v){
+        String username = getIntent().getStringExtra("username");
         Intent i = new Intent(this, EditAccountActivity.class);
+        i.putExtra("username", username);
+
         startActivity(i);
     }
 
     public void home(View v){
+        String username = getIntent().getStringExtra("username");
         Intent i = new Intent(this, CustomerHomeActivity.class);
+        i.putExtra("username", username);
+
         startActivity(i);
     }
     public void sub(View v){
+        String username = getIntent().getStringExtra("username");
         Intent i = new Intent(this, PremimumSubscriptionActivity.class);
+        i.putExtra("username", username);
+
         startActivity(i);
     }
     public void deleteAccount(View v){
