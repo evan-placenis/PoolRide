@@ -28,7 +28,7 @@ public class Customer {
     public String rating;
 
     @ColumnInfo(name = "subscription")
-    public Boolean subscription;
+    public String subscription;
 
     @ColumnInfo(name = "firstname")
     public String firstName;
@@ -45,7 +45,7 @@ public class Customer {
     @ColumnInfo(name = "q3")
     public String q3;
 
-    public Customer(String username, String password, String email, String phone, String firstName, String lastName, String rating, String q1, String q2, String q3, Boolean subscription) {
+    public Customer(String username, String password, String email, String phone, String firstName, String lastName, String rating, String q1, String q2, String q3, String subscription) {
         this.username = username;
         this.password = password;
         this.email = email;

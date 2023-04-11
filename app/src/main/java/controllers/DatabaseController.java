@@ -82,4 +82,16 @@ public class DatabaseController  extends AppCompatActivity {
         }
         return false;
     }
+
+    public boolean hasPremSub(String username, CustomerDatabase db){
+        encryptionController E = new encryptionController();
+        int key = E.getKey();
+        List<Customer> customerList = db.customerDao().getAllCustomers();
+        for(Customer customer: customerList){
+            if(E.decrypt(customer.username,key).equals(username) && customer.subscription.equals("true")) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

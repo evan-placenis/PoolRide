@@ -45,7 +45,13 @@ public class RegistrationActivity extends AppCompatActivity {
         String lastName = ((TextView) findViewById(R.id.registerLastName)).getText().toString();
         Switch premSub = (Switch) findViewById(R.id.subSwitch);
 
-        boolean subscription = premSub.isChecked();
+        boolean premSubBool = premSub.isChecked();
+        String subscription = "";
+        if(premSubBool == true){
+            subscription = "true";
+        }else{
+            subscription = "false";
+        }
 
 
         //encrypt messages before passing

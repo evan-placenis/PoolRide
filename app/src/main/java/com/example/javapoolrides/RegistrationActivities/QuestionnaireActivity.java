@@ -6,6 +6,7 @@ import androidx.room.Room;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -39,7 +40,6 @@ public class QuestionnaireActivity extends AppCompatActivity {
         String firstName = getIntent().getStringExtra("firstName");
         String lastName = getIntent().getStringExtra("lastName");
         String subscription = getIntent().getStringExtra("sub");
-        Boolean premSubscription = Boolean.parseBoolean(subscription);
 
         RadioGroup ageGroup;
         RadioGroup silentGroup;
@@ -79,7 +79,7 @@ public class QuestionnaireActivity extends AppCompatActivity {
                 CustomerDatabase.class, "customer-database").allowMainThreadQueries().build();
 
         String rating = "none"; //encrypt the rating possibly
-        Customer customer = new Customer(username, password, email, phone, firstName, lastName,rating, age, silent, tobacco, premSubscription);
+        Customer customer = new Customer(username, password, email, phone, firstName, lastName,rating, age, silent, tobacco, subscription);
         db.customerDao().insertAll(customer);
 
         Intent i = new Intent(this, CustomerHomeActivity.class);
