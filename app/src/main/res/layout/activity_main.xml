@@ -10,12 +10,12 @@
         android:id="@+id/output"
         android:layout_width="199dp"
         android:layout_height="151dp"
-        android:layout_marginTop="224dp"
-        android:text="Pool Ride"
+        android:layout_marginTop="232dp"
+        android:text="Pool Party"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.372"
+        app:layout_constraintHorizontal_bias="0.287"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

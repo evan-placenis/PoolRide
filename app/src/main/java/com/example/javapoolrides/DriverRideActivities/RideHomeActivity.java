@@ -1,19 +1,23 @@
 package com.example.javapoolrides.DriverRideActivities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.javapoolrides.Databases.Order.Order;
+import com.example.javapoolrides.Databases.Order.OrderDatabase;
 import com.example.javapoolrides.DriverHomeActivity;
 import com.example.javapoolrides.R;
 
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class RideHomeActivity extends AppCompatActivity {
-
+    Timer timer = new Timer();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +25,6 @@ public class RideHomeActivity extends AppCompatActivity {
         setTitle("Ride Home");
         String from = getIntent().getStringExtra("from");
         if(from.equals("QR")){
-            Timer timer = new Timer();
             timer.schedule(new TimerTask(){
                 @Override
                 public void run(){
@@ -29,9 +32,8 @@ public class RideHomeActivity extends AppCompatActivity {
                     startActivity(i);
                     finish();
                 }
-            },5000);
+            },10000);
         }else{
-            Timer timer = new Timer();
             timer.schedule(new TimerTask(){
                 @Override
                 public void run(){
@@ -46,10 +48,20 @@ public class RideHomeActivity extends AppCompatActivity {
 
     }
     public void endOffer(View v){
-        //ADD LOGIC TO DELETE USER FROM ORDER DATABASE
-
+        OrderDatabase db = Room.databaseBuilder(getApplicationContext(),
+                OrderDatabase.class, "order-database").allowMainThreadQueries().build();
+        String driverName = getIntent().getStringExtra("driver");
+        List<Order> orderList = db.orderDao().getAllOrders();
+        for(Order order: orderList){
+            if(order.driver.equals(driverName)){
+                db.orderDao().delete(order);
+            }
+        }
         Intent i = new Intent(this, DriverHomeActivity.class);
+        timer.cancel();
+        timer.purge();
         startActivity(i);
+
 
     }
 }
