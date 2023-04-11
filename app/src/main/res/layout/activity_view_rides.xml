@@ -20,28 +20,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginBottom="24dp"
-        android:onClick="selectRide"
-        android:text="@string/select_car"
-        app:backgroundTint="#4CAF50"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
         android:id="@+id/button14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="16dp"
         android:onClick="cancelRide"
         android:text="@string/cancel"
-        app:backgroundTint="#AC1B1B"
+        app:backgroundTint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
         android:layout_width="320dp"
@@ -58,7 +46,7 @@
             android:layout_height="79dp"
             android:onClick="firstRide"
             android:text="None"
-            app:backgroundTint="#00BCD4" />
+            app:backgroundTint="#03A9F4" />
 
         <Button
             android:id="@+id/secondChoice"
@@ -66,7 +54,7 @@
             android:layout_height="78dp"
             android:onClick="secondRide"
             android:text="None"
-            app:backgroundTint="#03A9F4" />
+            app:backgroundTint="#CC03A9F4" />
 
         <Button
             android:id="@+id/thirdChoice"
@@ -74,7 +62,7 @@
             android:layout_height="71dp"
             android:onClick="thirdRide"
             android:text="None"
-            app:backgroundTint="#2196F3" />
+            app:backgroundTint="#9903A9F4" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
