@@ -57,22 +57,30 @@ public class CustomerRequestingRideControl {
 
         for(int i = 0; i < orderList.size(); i++) {
             Order order = orderList.get(i);
-            if (order.seatsAvail == "0" || !(petF.equals(order.accessibility)) || (access.equals("true") && order.accessibility.equals("false"))){
+            if (order.seatsAvail == "0" || !(petF.equals(order.petFriendly)) || (access.equals("true") && order.accessibility.equals("false"))){
                 //Log.d("ISSUE", order.accessibility+ " " + accessibility);
                 continue;
-            }else if (order.q1.equals(q1)) {
+            }
+            if (order.q1.equals(q1)) {
                 currWeight += 12;
-            } else if (order.q2.equals(q2)) {
+                Log.d("WEIGHTS", String.valueOf(currWeight) + " " + order.driver);
+            }
+            if (order.q2.equals(q2)) {
                 currWeight += 10;
-            } else if (order.q3.equals(q3)) {
+                Log.d("WEIGHTS", String.valueOf(currWeight) + " " + order.driver);
+            }
+            if (order.q3.equals(q3)) {
                 currWeight += 8;
+                Log.d("WEIGHTS", String.valueOf(currWeight) + " " + order.driver);
             }
 
             //Add one for seats
 
             randomDist = random.nextInt(maxDist);
             currWeight += randomDist;
+            Log.d("Final WEIGHTS", String.valueOf(currWeight) + " " + order.driver);
             percentage = Math.round((currWeight*100)/35);
+            Log.d("Percentage", String.valueOf(percentage) + " " + order.driver);
             matchedCars.put(order.driver, percentage);
 
             currWeight = 0;
