@@ -82,4 +82,8 @@ public class Customer {
     public void setUsername(String username) {
         this.username = username;
     }
+
+    public void setSub(String sub) {
+        this.subscription = sub;
+    }
 }
