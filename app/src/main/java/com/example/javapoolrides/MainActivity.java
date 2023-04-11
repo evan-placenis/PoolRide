@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         List<Order> orderList = dbO.orderDao().getAllOrders();
         //dbO.clearAllTables();
         if(orderList.size() == 0){
-            String driv = "John";
+            String driv = "Joe";
             String seats = "5";
             String location = "test";
             String petFriendly = "false";

@@ -53,6 +53,7 @@ public class QRCodeActivity extends AppCompatActivity {
 
         Intent i = new Intent(this, RideHomeActivity.class);
         i.putExtra("from", "QR");
+        i.putExtra("driver", driver);
         startActivity(i);
     }
 

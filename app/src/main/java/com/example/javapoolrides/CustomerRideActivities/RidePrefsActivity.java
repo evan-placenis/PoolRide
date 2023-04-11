@@ -7,23 +7,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.util.Pair;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.Toast;
-import android.widget.Button;
 
 import com.example.javapoolrides.CustomerHomeActivity;
 import com.example.javapoolrides.Databases.Customer.CustomerDatabase;
 import com.example.javapoolrides.Databases.Order.OrderDatabase;
 import com.example.javapoolrides.R;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 
-import controllers.CustomerRequestingRideControl;
+import controllers.Dispatcher;
 
 public class RidePrefsActivity extends AppCompatActivity {
 
@@ -54,7 +49,7 @@ public class RidePrefsActivity extends AppCompatActivity {
         //Add another to ask how many people are joining?
 
         //data to control class to get the top three drivers for the user
-        CustomerRequestingRideControl reqRide = new CustomerRequestingRideControl();
+        Dispatcher reqRide = new Dispatcher();
         Map<String,Integer> topThree = reqRide.findMatch(dbO,dbC,pet,accessibility, username);
 
         //Send the names of the top three drivers and their score to the next page to be displayed
