@@ -12,6 +12,9 @@
         android:theme="@style/Theme.JavaPoolRides"
         tools:targetApi="31">
         <activity
+            android:name=".DriverRideActivities.DriverDestinationActivity"
+            android:exported="false" />
+        <activity
             android:name=".DriverRideActivities.RideHomeActivity"
             android:exported="false" />
         <activity

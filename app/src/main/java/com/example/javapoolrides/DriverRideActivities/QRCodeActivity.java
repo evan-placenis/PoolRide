@@ -52,6 +52,7 @@ public class QRCodeActivity extends AppCompatActivity {
         dbO.orderDao().insertAll(order);
 
         Intent i = new Intent(this, RideHomeActivity.class);
+        i.putExtra("from", "QR");
         startActivity(i);
     }
 
