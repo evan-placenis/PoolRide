@@ -85,6 +85,7 @@ public class RegistrationActivity extends AppCompatActivity {
             i.putExtra("firstName", firstName);
             i.putExtra("lastName", lastName);
             i.putExtra("sub", subscription);
+            i.putExtra("decryptUsername", E.decrypt(username,key));
             startActivity(i);
         }else{
             Context context = getApplicationContext();

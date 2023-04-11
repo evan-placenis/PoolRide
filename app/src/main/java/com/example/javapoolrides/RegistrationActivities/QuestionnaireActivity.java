@@ -40,6 +40,7 @@ public class QuestionnaireActivity extends AppCompatActivity {
         String firstName = getIntent().getStringExtra("firstName");
         String lastName = getIntent().getStringExtra("lastName");
         String subscription = getIntent().getStringExtra("sub");
+        String decryptUsername = getIntent().getStringExtra("decryptUsername");
 
         RadioGroup ageGroup;
         RadioGroup silentGroup;
@@ -83,7 +84,7 @@ public class QuestionnaireActivity extends AppCompatActivity {
         db.customerDao().insertAll(customer);
 
         Intent i = new Intent(this, CustomerHomeActivity.class);
-        i.putExtra("username", username);
+        i.putExtra("username", decryptUsername);
         startActivity(i);
     }
 }
