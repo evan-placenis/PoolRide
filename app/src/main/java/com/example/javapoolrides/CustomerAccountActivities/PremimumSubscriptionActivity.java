@@ -28,7 +28,9 @@ public class PremimumSubscriptionActivity extends AppCompatActivity {
     }
 
     public void home(View v){
+        String username = getIntent().getStringExtra("username");
         Intent i = new Intent(this, ViewAccountDetailsActivity.class);
+        i.putExtra("username", username);
         startActivity(i);
     }
 }

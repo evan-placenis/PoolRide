@@ -21,6 +21,4 @@ public interface CustomerDao {
 
     @Query("SELECT * FROM customer")
     List<Customer> getAllCustomers();
-
-
 }
