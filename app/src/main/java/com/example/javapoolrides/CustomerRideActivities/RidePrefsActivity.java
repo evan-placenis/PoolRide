@@ -53,52 +53,42 @@ public class RidePrefsActivity extends AppCompatActivity {
         boolean pet = petSwitch.isChecked();
         //Add another to ask how many people are joining?
 
-
+        //data to control class to get the top three drivers for the user
         CustomerRequestingRideControl reqRide = new CustomerRequestingRideControl();
         Map<String,Integer> topThree = reqRide.findMatch(dbO,dbC,pet,accessibility, username);
 
-        //Update Buttons on next page with top three drivers
+        //Send the names of the top three drivers and their score to the next page to be displayed
         Intent i = new Intent(this, ViewRidesActivity.class);
         int count = 1;
         for (Map.Entry<String, Integer> entry : topThree.entrySet()) {
             Log.d("TOP THREE",entry.getKey() + entry.getValue().toString());
             if (count == 1){
                 i.putExtra("firstChoice", entry.getKey() + " " +entry.getValue().toString() + "%");
-                i.putExtra("firstChoiceName", entry.getKey());
+                i.putExtra("firstChoiceName", entry.getKey());//Send the drivers name alone
             }else if(count == 2){
                 i.putExtra("secondChoice", entry.getKey() + " " +entry.getValue().toString()+ "%");
-                i.putExtra("secondChoiceName", entry.getKey());
+                i.putExtra("secondChoiceName", entry.getKey());//Send the drivers name alone
             }else if (count == 3){
                 i.putExtra("thirdChoice", entry.getKey() + " " +entry.getValue().toString()+ "%");
-                i.putExtra("ThirdChoiceName", entry.getKey());
+                i.putExtra("ThirdChoiceName", entry.getKey());//Send the drivers name alone
             }
             count += 1;
         }
-        //For scenarios where there are less than three available cars
-        //DISABLE BUTTON FROM BEING CLICKED IF IT IS, fix this functionality
+        //If there are less than three buttons
         while (count < 4){
             if(count == 1){
-//                View myView = findViewById(R.id.firstChoice);
-//                myView.setEnabled(false);
-
                 Context context = getApplicationContext();
                 CharSequence text = "No available cars with current preferences, please try again later or change preferences";
                 Toast toast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
                 toast.show();
                 i.putExtra("firstChoice", "None");
             }else if (count == 2){
-//                View myView = findViewById(R.id.secondChoice);
-//                myView.setEnabled(false);
-
                 i.putExtra("secondChoice", "None");
             } else if (count == 3){
-//                View myView = findViewById(R.id.thirdChoice);
-//                myView.setEnabled(false);
                 i.putExtra("thirdChoice", "None");
             }
             count += 1;
         }
-
         startActivity(i);
     }
 

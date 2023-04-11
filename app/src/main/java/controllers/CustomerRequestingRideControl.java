@@ -57,10 +57,6 @@ public class CustomerRequestingRideControl {
 
         for(int i = 0; i < orderList.size(); i++) {
             Order order = orderList.get(i);
-            //pet friendly / accomodation / seats are manadorty
-//            if ((!(order.petFriendly.equals(petFriendly))&&petFriendly.equals(false)) || !(order.accessibility.equals(accessibility))||Integer.parseInt(seatsAvail) == 0) {
-//                continue;
-//            } else
             if (order.seatsAvail == "0" || !(petF.equals(order.accessibility)) || (access.equals("true") && order.accessibility.equals("false"))){
                 //Log.d("ISSUE", order.accessibility+ " " + accessibility);
                 continue;
@@ -96,7 +92,6 @@ public class CustomerRequestingRideControl {
                 topThree.put(maxEntry.getKey(),maxEntry.getValue());
                 matchedCars.remove(maxEntry.getKey());
             }
-            //Log.d("IN FOR LOOP",String.valueOf(matchedCars.size()));
         }
 
 

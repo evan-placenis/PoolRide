@@ -45,35 +45,38 @@
 
     <Button
         android:id="@+id/firstChoice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="180dp"
+        android:layout_width="210dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="352dp"
         android:onClick="firstRide"
         android:text="None"
+        app:backgroundTint="#00BCD4"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/secondChoice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="324dp"
+        android:layout_width="211dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="440dp"
         android:onClick="secondRide"
         android:text="None"
+        app:backgroundTint="#03A9F4"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/thirdChoice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
-        android:layout_marginBottom="188dp"
+        android:layout_width="205dp"
+        android:layout_height="66dp"
+        android:layout_marginBottom="132dp"
         android:onClick="thirdRide"
         android:text="None"
+        app:backgroundTint="#2196F3"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

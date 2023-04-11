@@ -24,17 +24,27 @@ public class ViewRidesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_rides);
         setTitle("Choose your ride");
 
+        //Make the buttons display the names created on the previouse page, if the name is none turn the button off
         Button firstButton = findViewById(R.id.firstChoice);
         String firstChoice = getIntent().getStringExtra("firstChoice");
         firstButton.setText(firstChoice);
+        if(firstChoice.equals("None")){
+            firstButton.setEnabled(false);
+        }
 
         Button secondButton = findViewById(R.id.secondChoice);
         String secondChoice = getIntent().getStringExtra("secondChoice");
         secondButton.setText(secondChoice);
+        if(secondChoice.equals("None")){
+            secondButton.setEnabled(false);
+        }
 
         Button thirdButton = findViewById(R.id.thirdChoice);
         String thirdChoice = getIntent().getStringExtra("thirdChoice");
         thirdButton.setText(thirdChoice);
+        if(thirdChoice.equals("None")){
+            thirdButton.setEnabled(false);
+        }
 
     }
 
@@ -47,7 +57,7 @@ public class ViewRidesActivity extends AppCompatActivity {
     public void firstRide (View v) {
         //update number of seats in the car
         String driver = getIntent().getStringExtra("firstChoiceName");
-        updateDatabase(driver);
+        updateDatabase(driver);//get this working
 
         Intent i = new Intent(this, CustomerRideActivity.class);
         startActivity(i);
