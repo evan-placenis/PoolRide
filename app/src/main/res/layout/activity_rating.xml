@@ -50,7 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
-        android:text="How is your exprience with the ride?"
+        android:text="How was your exprience with the ride?"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textSize="16sp"
@@ -58,5 +58,13 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ratingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rating"
+        tools:layout_editor_absoluteX="185dp"
+        tools:layout_editor_absoluteY="175dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
