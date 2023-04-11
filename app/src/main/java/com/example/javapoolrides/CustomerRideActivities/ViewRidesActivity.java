@@ -16,6 +16,8 @@ import com.example.javapoolrides.R;
 
 import java.util.List;
 
+import controllers.DatabaseController;
+
 public class ViewRidesActivity extends AppCompatActivity {
 
     @Override
@@ -56,25 +58,32 @@ public class ViewRidesActivity extends AppCompatActivity {
 
     public void firstRide (View v) {
         //update number of seats in the car
+        OrderDatabase dbO = Room.databaseBuilder(getApplicationContext(),
+                OrderDatabase.class, "order-database").allowMainThreadQueries().build();
         String driver = getIntent().getStringExtra("firstChoiceName");
-        updateDatabase(driver);//get this working
-
+        DatabaseController controller = new DatabaseController();
+        controller.updateSeats(dbO,driver);
         Intent i = new Intent(this, CustomerRideActivity.class);
         startActivity(i);
     }
 
     public void secondRide (View v) {
+        OrderDatabase dbO = Room.databaseBuilder(getApplicationContext(),
+                OrderDatabase.class, "order-database").allowMainThreadQueries().build();
         String driver = getIntent().getStringExtra("secondChoiceName");
-        updateDatabase(driver);
+        DatabaseController controller = new DatabaseController();
+        controller.updateSeats(dbO,driver);
 
         Intent i = new Intent(this, CustomerRideActivity.class);
         startActivity(i);
     }
 
     public void thirdRide (View v) {
+        OrderDatabase dbO = Room.databaseBuilder(getApplicationContext(),
+                OrderDatabase.class, "order-database").allowMainThreadQueries().build();
         String driver = getIntent().getStringExtra("thirdChoiceName");
-        updateDatabase(driver);
-
+        DatabaseController controller = new DatabaseController();
+        controller.updateSeats(dbO,driver);
         Intent i = new Intent(this, CustomerRideActivity.class);
         startActivity(i);
     }
@@ -84,18 +93,4 @@ public class ViewRidesActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    //PUT THIS IN CONTROLLER CLASS
-    public void updateDatabase(String driver){
-        OrderDatabase dbO = Room.databaseBuilder(getApplicationContext(),
-                OrderDatabase.class, "order-database").allowMainThreadQueries().build();
-        List<Order> orderList = dbO.orderDao().getAllOrders();
-        for(Order order : orderList){
-            if(order.driver == driver){
-                int updatedSeats = Integer.parseInt(order.seatsAvail) - 1;
-                order.seatsAvail = Integer.toString(updatedSeats);
-                dbO.orderDao().update(order);
-            }
-        }
-
-    }
 }

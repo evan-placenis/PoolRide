@@ -21,7 +21,8 @@ public interface OrderDao {
 
 //    @Query("DELETE FROM [order]")
 //    void deleteUser();
-
-    @Query("SELECT * FROM [order]")
+    @Query("UPDATE orders SET seatsAvail=:seatsAvail WHERE uid =:id")
+    void update(String seatsAvail, int id);
+    @Query("SELECT * FROM orders")
     List<Order> getAllOrders();
 }

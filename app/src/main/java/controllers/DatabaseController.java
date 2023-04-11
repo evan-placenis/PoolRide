@@ -11,7 +11,9 @@ import com.example.javapoolrides.Databases.Customer.Customer;
 import com.example.javapoolrides.Databases.Customer.CustomerDatabase;
 import com.example.javapoolrides.Databases.Driver.Driver;
 import com.example.javapoolrides.Databases.Driver.DriverDatabase;
-import com.example.javapoolrides.Databases.Customer.CustomerDatabase;;
+import com.example.javapoolrides.Databases.Customer.CustomerDatabase;
+import com.example.javapoolrides.Databases.Order.Order;
+import com.example.javapoolrides.Databases.Order.OrderDatabase;;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -93,5 +95,15 @@ public class DatabaseController  extends AppCompatActivity {
             }
         }
         return false;
+    }
+    public void updateSeats(OrderDatabase dbO, String driver){
+        List<Order> orderList = dbO.orderDao().getAllOrders();
+        for(Order order : orderList){
+            if(order.driver.equals(driver)){
+                int seats = Integer.parseInt(order.seatsAvail) - 1;
+                Log.d("SEATS", String.valueOf(seats));
+                dbO.orderDao().update(String.valueOf(seats), order.uid);
+            }
+        }
     }
 }

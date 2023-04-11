@@ -57,7 +57,7 @@ public class CustomerRequestingRideControl {
 
         for(int i = 0; i < orderList.size(); i++) {
             Order order = orderList.get(i);
-            if (order.seatsAvail == "0" || !(petF.equals(order.petFriendly)) || (access.equals("true") && order.accessibility.equals("false"))){
+            if (order.seatsAvail.equals("0") || !(petF.equals(order.petFriendly)) || (access.equals("true") && order.accessibility.equals("false"))){
                 //Log.d("ISSUE", order.accessibility+ " " + accessibility);
                 continue;
             }

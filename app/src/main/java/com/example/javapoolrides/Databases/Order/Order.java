@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey;
 
 import com.example.javapoolrides.Databases.Customer.Customer;
 
-@Entity
+@Entity(tableName = "orders")
 public class Order {
     //key to distinguish the object
     @PrimaryKey(autoGenerate = true)
