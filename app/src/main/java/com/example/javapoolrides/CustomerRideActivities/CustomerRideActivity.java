@@ -10,12 +10,18 @@ import android.widget.EditText;
 import com.example.javapoolrides.DriverRideActivities.AcceptRideActivity;
 import com.example.javapoolrides.DriverRideActivities.RideHomeActivity;
 import com.example.javapoolrides.R;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class CustomerRideActivity extends AppCompatActivity {
+public class CustomerRideActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     Timer timer = new Timer();
 
@@ -24,9 +30,15 @@ public class CustomerRideActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_ride);
         setTitle("Your ride");
-        MapView mapView = findViewById(R.id.arrival);
-        mapView.onCreate(savedInstanceState);
+        //MapView mapView = findViewById(R.id.arrival);
+        //mapView.onCreate(savedInstanceState);
         // simulate ride
+
+        // Get the SupportMapFragment and request notification when the map is ready to be used.
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+
         timer.schedule(new TimerTask(){
             @Override
             public void run(){
@@ -61,4 +73,15 @@ public class CustomerRideActivity extends AppCompatActivity {
         i.putExtra("username", username);
         startActivity(i);
     }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        LatLng mcmaster = new LatLng(43.26145, -79.91907);
+        googleMap.addMarker(new MarkerOptions()
+                .position(mcmaster)
+                .title("Marker in Sydney"));
+        googleMap.animateCamera( CameraUpdateFactory.newLatLngZoom(mcmaster, 16.8f ) );
+
+    }
+
 }
