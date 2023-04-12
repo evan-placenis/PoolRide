@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 import com.example.javapoolrides.DriverRideActivities.AcceptRideActivity;
 import com.example.javapoolrides.DriverRideActivities.RideHomeActivity;
@@ -31,6 +32,10 @@ public class CustomerRideActivity extends AppCompatActivity {
             public void run(){
                 Intent i = new Intent(CustomerRideActivity.this, ArrivalActivity.class);
                 String username = getIntent().getStringExtra("username");
+                String pickup = getIntent().getStringExtra("pickup");
+                String dropoff = getIntent().getStringExtra("dropoff");
+                i.putExtra("pickup", pickup);
+                i.putExtra("dropoff", dropoff);
                 i.putExtra("username", username);
                 startActivity(i);
                 finish();
@@ -49,9 +54,11 @@ public class CustomerRideActivity extends AppCompatActivity {
         timer.cancel();
         timer.purge();
         String username = getIntent().getStringExtra("username");
+        String pickup = getIntent().getStringExtra("pickup");
+        String dropoff = getIntent().getStringExtra("dropoff");
+        i.putExtra("pickup", pickup);
+        i.putExtra("dropoff", dropoff);
         i.putExtra("username", username);
         startActivity(i);
     }
-
-
 }

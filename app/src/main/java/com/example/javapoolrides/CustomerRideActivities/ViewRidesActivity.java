@@ -50,12 +50,6 @@ public class ViewRidesActivity extends AppCompatActivity {
 
     }
 
-    public void selectRide (View v) {
-
-//        Intent i = new Intent(this, CustomerRideActivity.class);
-//        startActivity(i);
-    }
-
     public void firstRide (View v) {
         //update number of seats in the car
         OrderDatabase dbO = Room.databaseBuilder(getApplicationContext(),
@@ -65,6 +59,10 @@ public class ViewRidesActivity extends AppCompatActivity {
         controller.updateSeats(dbO,driver);
         Intent i = new Intent(this, CustomerRideActivity.class);
         String username = getIntent().getStringExtra("username");
+        String pickup = getIntent().getStringExtra("pickup");
+        String dropoff = getIntent().getStringExtra("dropoff");
+        i.putExtra("pickup", pickup);
+        i.putExtra("dropoff", dropoff);
         i.putExtra("username", username);
         startActivity(i);
     }
@@ -77,6 +75,10 @@ public class ViewRidesActivity extends AppCompatActivity {
         controller.updateSeats(dbO,driver);
         Intent i = new Intent(this, CustomerRideActivity.class);
         String username = getIntent().getStringExtra("username");
+        String pickup = getIntent().getStringExtra("pickup");
+        String dropoff = getIntent().getStringExtra("dropoff");
+        i.putExtra("pickup", pickup);
+        i.putExtra("dropoff", dropoff);
         i.putExtra("username", username);
         startActivity(i);
     }
@@ -89,6 +91,10 @@ public class ViewRidesActivity extends AppCompatActivity {
         controller.updateSeats(dbO,driver);
         Intent i = new Intent(this, CustomerRideActivity.class);
         String username = getIntent().getStringExtra("username");
+        String pickup = getIntent().getStringExtra("pickup");
+        String dropoff = getIntent().getStringExtra("dropoff");
+        i.putExtra("pickup", pickup);
+        i.putExtra("dropoff", dropoff);
         i.putExtra("username", username);
         startActivity(i);
     }

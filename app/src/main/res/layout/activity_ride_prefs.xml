@@ -31,7 +31,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/PickUpLocation"
+        android:id="@+id/pickuplocation"
         android:layout_width="332dp"
         android:layout_height="43dp"
         android:ems="10"
@@ -55,7 +55,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PickUpLocation" />
+        app:layout_constraintTop_toBottomOf="@+id/pickuplocation" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="334dp"

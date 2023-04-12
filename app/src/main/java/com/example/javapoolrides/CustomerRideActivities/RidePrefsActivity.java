@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -38,6 +39,9 @@ public class RidePrefsActivity extends AppCompatActivity {
 
         String username = getIntent().getStringExtra("username");//Obtain the name of the user in the session
 
+        String dropoff = ((EditText) findViewById(R.id.Destination)).getText().toString();
+        String pickup = ((EditText) findViewById(R.id.pickuplocation)).getText().toString();
+
         //Obtain Data From Page
         Switch shareSwitch = (Switch) findViewById(R.id.shareSwitch);
         Switch accessibilitySwitch = (Switch) findViewById(R.id.accessibilitySwitch);
@@ -54,7 +58,6 @@ public class RidePrefsActivity extends AppCompatActivity {
 
         //Send the names of the top three drivers and their score to the next page to be displayed
         Intent i = new Intent(this, ViewRidesActivity.class);
-        i.putExtra("username",username);
         int count = 1;
         for (Map.Entry<String, Integer> entry : topThree.entrySet()) {
             Log.d("TOP THREE",entry.getKey() + entry.getValue().toString());
@@ -86,6 +89,8 @@ public class RidePrefsActivity extends AppCompatActivity {
             count += 1;
         }
         i.putExtra("username", username);
+        i.putExtra("pickup", pickup);
+        i.putExtra("dropoff", dropoff);
         startActivity(i);
     }
 
