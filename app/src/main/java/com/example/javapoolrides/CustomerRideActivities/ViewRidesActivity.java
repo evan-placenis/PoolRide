@@ -64,6 +64,8 @@ public class ViewRidesActivity extends AppCompatActivity {
         DatabaseController controller = new DatabaseController();
         controller.updateSeats(dbO,driver);
         Intent i = new Intent(this, CustomerRideActivity.class);
+        String username = getIntent().getStringExtra("username");
+        i.putExtra("username", username);
         startActivity(i);
     }
 
@@ -73,8 +75,9 @@ public class ViewRidesActivity extends AppCompatActivity {
         String driver = getIntent().getStringExtra("secondChoiceName");
         DatabaseController controller = new DatabaseController();
         controller.updateSeats(dbO,driver);
-
         Intent i = new Intent(this, CustomerRideActivity.class);
+        String username = getIntent().getStringExtra("username");
+        i.putExtra("username", username);
         startActivity(i);
     }
 
@@ -85,11 +88,15 @@ public class ViewRidesActivity extends AppCompatActivity {
         DatabaseController controller = new DatabaseController();
         controller.updateSeats(dbO,driver);
         Intent i = new Intent(this, CustomerRideActivity.class);
+        String username = getIntent().getStringExtra("username");
+        i.putExtra("username", username);
         startActivity(i);
     }
 
     public void cancelRide (View v) {
         Intent i = new Intent(this, CustomerHomeActivity.class);
+        String username = getIntent().getStringExtra("username");
+        i.putExtra("username", username);
         startActivity(i);
     }
 

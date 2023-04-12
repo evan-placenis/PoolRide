@@ -56,6 +56,7 @@ public class RatingActivity extends AppCompatActivity {
         }
 
         Intent i = new Intent(this, CustomerHomeActivity.class);
+        i.putExtra("username", username);
         startActivity(i);
     }
 }

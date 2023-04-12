@@ -36,7 +36,6 @@ public class ScheduleRideActivity extends AppCompatActivity {
         String username = getIntent().getStringExtra("username");
         Intent i = new Intent(this, CustomerHomeActivity.class);
         i.putExtra("username", username);
-
         String date = ((TextView) findViewById(R.id.date)).getText().toString();
         String time = ((TextView) findViewById(R.id.time)).getText().toString();
         String destinationLoc = ((TextView) findViewById(R.id.destination)).getText().toString();

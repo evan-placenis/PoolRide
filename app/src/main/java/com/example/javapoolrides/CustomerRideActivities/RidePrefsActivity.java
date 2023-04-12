@@ -84,11 +84,14 @@ public class RidePrefsActivity extends AppCompatActivity {
             }
             count += 1;
         }
+        i.putExtra("username", username);
         startActivity(i);
     }
 
     public void home (View v){
         Intent i = new Intent(this, CustomerHomeActivity.class);
+        String username = getIntent().getStringExtra("username");
+        i.putExtra("username", username);
         startActivity(i);
     }
 }

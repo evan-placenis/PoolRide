@@ -23,11 +23,15 @@ public class ArrivalActivity extends AppCompatActivity {
 
     public void returnHome(View v) {
         Intent i = new Intent(this, CustomerHomeActivity.class);
+        String username = getIntent().getStringExtra("username");
+        i.putExtra("username", username);
         startActivity(i);
     }
 
     public void ratingPage(View v) {
         Intent i = new Intent(this, RatingActivity.class);
+        String username = getIntent().getStringExtra("username");
+        i.putExtra("username", username);
         startActivity(i);
     }
 }

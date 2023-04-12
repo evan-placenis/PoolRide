@@ -28,6 +28,8 @@ public class CustomerRideActivity extends AppCompatActivity {
             @Override
             public void run(){
                 Intent i = new Intent(CustomerRideActivity.this, ArrivalActivity.class);
+                String username = getIntent().getStringExtra("username");
+                i.putExtra("username", username);
                 startActivity(i);
                 finish();
             }
@@ -44,6 +46,8 @@ public class CustomerRideActivity extends AppCompatActivity {
         Intent i = new Intent(this, ViewRideDetailsActivity.class);
         timer.cancel();
         timer.purge();
+        String username = getIntent().getStringExtra("username");
+        i.putExtra("username", username);
         startActivity(i);
     }
 
