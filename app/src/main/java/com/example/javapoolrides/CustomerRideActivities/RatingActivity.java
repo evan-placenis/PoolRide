@@ -54,6 +54,7 @@ public class RatingActivity extends AppCompatActivity {
                     customer.updateTotalRating(String.valueOf(denominator));
                     db.customerDao().update(customer);
                 }
+                break;
             }
         }
 
