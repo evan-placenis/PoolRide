@@ -45,12 +45,14 @@ public class RatingActivity extends AppCompatActivity {
                 if(customer.rating.equals("none")){
                     customer.updateRating(rating);
                     customer.updateTotalRating("1");
+                    db.customerDao().update(customer);
                 }else{
                     int denominator = Integer.parseInt(customer.totalRating) + 1;
                     int numerator = Integer.parseInt(customer.rating) + Integer.parseInt(rating);
                     int newRating = numerator/denominator;
                     customer.updateRating(String.valueOf(newRating));
                     customer.updateTotalRating(String.valueOf(denominator));
+                    db.customerDao().update(customer);
                 }
             }
         }
