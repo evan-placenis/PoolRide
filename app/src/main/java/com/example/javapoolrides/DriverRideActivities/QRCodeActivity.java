@@ -34,13 +34,12 @@ public class QRCodeActivity extends AppCompatActivity {
         imageView.setImageBitmap(qrCodeBitmap);
 
         String driver = getIntent().getStringExtra("driver");
-        Log.d("QR", driver);
         String seatsAvail = getIntent().getStringExtra("seatsAvail");
         String accessibility = getIntent().getStringExtra("accessibility");
         String petFriendly = getIntent().getStringExtra("petFriendly");
 
         //Hard coded for now. Change Later
-        String location = "location";
+        String location = "Hamilton";
         String q1 = "Yes";
         String q2 ="Yes";
         String q3 = "Yes";

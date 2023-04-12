@@ -54,6 +54,7 @@ public class RidePrefsActivity extends AppCompatActivity {
 
         //Send the names of the top three drivers and their score to the next page to be displayed
         Intent i = new Intent(this, ViewRidesActivity.class);
+        i.putExtra("username",username);
         int count = 1;
         for (Map.Entry<String, Integer> entry : topThree.entrySet()) {
             Log.d("TOP THREE",entry.getKey() + entry.getValue().toString());

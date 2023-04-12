@@ -19,13 +19,18 @@ public class DriverDestinationActivity extends AppCompatActivity {
     }
 
     public void more(View v) {
+        String driverName = getIntent().getStringExtra("driver");
         Intent i = new Intent(this, RideHomeActivity.class);
+        i.putExtra("driver",driverName);
+        i.putExtra("from","QR");
         startActivity(i);
     }
 
 
     public void goHome(View v) {
+        String driverName = getIntent().getStringExtra("driver");
         Intent i = new Intent(this, DriverHomeActivity.class);
+        i.putExtra("username",driverName);
         startActivity(i);
     }
 }
