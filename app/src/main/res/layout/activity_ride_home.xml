@@ -28,17 +28,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.34" />
-
-    <ImageView
-        android:id="@+id/imageView21"
-        android:layout_width="155dp"
-        android:layout_height="143dp"
-        app:layout_constraintBottom_toTopOf="@+id/stopOffer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9"
-        app:layout_constraintVertical_bias="0.09"
-        app:srcCompat="@drawable/clock" />
+        app:layout_constraintVertical_bias="0.39" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

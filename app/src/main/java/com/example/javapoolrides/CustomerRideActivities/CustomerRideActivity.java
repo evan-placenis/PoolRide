@@ -9,6 +9,7 @@ import android.view.View;
 import com.example.javapoolrides.DriverRideActivities.AcceptRideActivity;
 import com.example.javapoolrides.DriverRideActivities.RideHomeActivity;
 import com.example.javapoolrides.R;
+import com.google.android.gms.maps.MapView;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -22,7 +23,8 @@ public class CustomerRideActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_ride);
         setTitle("Your ride");
-
+        MapView mapView = findViewById(R.id.arrival);
+        mapView.onCreate(savedInstanceState);
         // simulate ride
         timer.schedule(new TimerTask(){
             @Override

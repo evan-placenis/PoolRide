@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.javapoolrides.DriverRideActivities.OfferRideDetailsActivity;
 import com.example.javapoolrides.DriverRideActivities.QRCodeActivity;
+import com.google.android.gms.maps.MapView;
 
 public class DriverHomeActivity extends AppCompatActivity {
     private Boolean Offering = Boolean.FALSE;
@@ -19,9 +20,9 @@ public class DriverHomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver_home);
         setTitle("Home");
-        //Need API to work
-        //MapView mapView = findViewById(R.id.Current);
-        //mapView.onCreate(savedInstanceState);
+        MapView mapView = findViewById(R.id.Current);
+        mapView.onCreate(savedInstanceState);
+
     }
 
     public void offerRide(View v){

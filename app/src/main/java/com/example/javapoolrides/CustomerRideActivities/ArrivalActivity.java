@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.example.javapoolrides.CustomerHomeActivity;
 import com.example.javapoolrides.R;
+import com.google.android.gms.maps.MapView;
 
 public class ArrivalActivity extends AppCompatActivity {
 
@@ -16,9 +17,8 @@ public class ArrivalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_arrival);
         setTitle("Arrival");
-        //Need API to work
-        //MapView mapView = findViewById(R.id.Arrival);
-        //mapView.onCreate(savedInstanceState);
+        MapView mapView = findViewById(R.id.Arrival);
+        mapView.onCreate(savedInstanceState);
     }
 
     public void returnHome(View v) {
