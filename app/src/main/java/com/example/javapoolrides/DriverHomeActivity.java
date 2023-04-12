@@ -42,6 +42,8 @@ public class DriverHomeActivity extends AppCompatActivity {
         CharSequence text = "Ride Offer Stopped!";
         Toast toast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
         toast.show();
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
     }
 
     public void home(View v){

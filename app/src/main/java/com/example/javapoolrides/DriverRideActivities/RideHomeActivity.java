@@ -24,11 +24,13 @@ public class RideHomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ride_home);
         setTitle("Ride Home");
         String from = getIntent().getStringExtra("from");
+        String driverName = getIntent().getStringExtra("driver");
         if(from.equals("QR")){
             timer.schedule(new TimerTask(){
                 @Override
                 public void run(){
                     Intent i = new Intent(RideHomeActivity.this, AcceptRideActivity.class);
+                    i.putExtra("driver",driverName);
                     startActivity(i);
                     finish();
                 }
@@ -38,6 +40,7 @@ public class RideHomeActivity extends AppCompatActivity {
                 @Override
                 public void run(){
                     Intent i = new Intent(RideHomeActivity.this, DriverDestinationActivity.class);
+                    i.putExtra("driver",driverName);
                     startActivity(i);
                     finish();
                 }
@@ -58,6 +61,7 @@ public class RideHomeActivity extends AppCompatActivity {
             }
         }
         Intent i = new Intent(this, DriverHomeActivity.class);
+        i.putExtra("username",driverName);
         timer.cancel();
         timer.purge();
         startActivity(i);

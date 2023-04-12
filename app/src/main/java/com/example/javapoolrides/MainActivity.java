@@ -71,15 +71,15 @@ public class MainActivity extends AppCompatActivity {
             String qu3 = "Yes";
             Order order2 = new Order(driverPeter, seatsPeter,locationPeter, petFriendlyPeter,accessibilityPeter,qu1,qu2,qu3);
 
-            String driverJoe = "John";
-            String seatsJoe = "5";
-            String locationJoe = "Main St";
-            String petFriendlyJoe = "false";
-            String accessibilityJoe = "false";
+            String driverJohn = "John";
+            String seatsJohn = "5";
+            String locationJohn = "Main St";
+            String petFriendlyJohn = "false";
+            String accessibilityJohn = "false";
             String que1 = "Yes";
             String que2 ="Yes";
             String que3 = "No";
-            Order order3 = new Order(driverJoe, seatsJoe,locationJoe, petFriendlyJoe,accessibilityJoe,que1,que2,que3);
+            Order order3 = new Order(driverJohn, seatsJohn,locationJohn, petFriendlyJohn,accessibilityJohn,que1,que2,que3);
 
             String driverKaylan = "Kaylan";
             String seatsKaylan = "5";
