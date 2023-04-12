@@ -84,8 +84,8 @@ public class MainActivity extends AppCompatActivity {
             String driverKaylan = "Kaylan";
             String seatsKaylan = "5";
             String locationKaylan = "Main St";
-            String petFriendlyKaylan = "True";
-            String accessibilityKaylan = "True";
+            String petFriendlyKaylan = "true";
+            String accessibilityKaylan = "true";
             String ques1 = "Yes";
             String ques2 ="Yes";
             String ques3 = "Yes";

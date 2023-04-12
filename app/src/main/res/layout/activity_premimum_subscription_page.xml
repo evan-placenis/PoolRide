@@ -23,7 +23,7 @@
         android:layout_height="49dp"
         android:layout_marginBottom="32dp"
         android:onClick="sub"
-        android:text="Join Ride Pool+"
+        android:text="Join Pool Ride+"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -35,7 +35,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="56dp"
         android:fontFamily="sans-serif-black"
-        android:text="RidePool+"
+        android:text="Pool Party+"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:typeface="serif"
         app:layout_constraintStart_toStartOf="parent"
