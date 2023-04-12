@@ -67,14 +67,6 @@ public class QuestionnaireActivity extends AppCompatActivity {
         String silent = (String) silentResult.getText();
         String tobacco = (String) tobaccoResult.getText();
 
-//        Toast.makeText(QuestionnaireActivity.this,
-//                tobaccoButton.getText(), Toast.LENGTH_SHORT).show();
-
-//        ContentValues cv = new ContentValues();
-//        cv.put("question1", String.valueOf(ageResult));
-//        cv.put("question2", String.valueOf(silentResult));
-//        cv.put("question3", String.valueOf(ageResult));
-
         //Update the customer database entry for
         CustomerDatabase db = Room.databaseBuilder(getApplicationContext(),
                 CustomerDatabase.class, "customer-database").allowMainThreadQueries().build();

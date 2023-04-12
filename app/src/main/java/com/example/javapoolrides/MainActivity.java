@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         if(driverList.size() == 0){
         encryptionController E = new encryptionController();
         int key = E.getKey();
-        String username = E.encrypt("evan",key);
+        String username = E.encrypt("jung",key);
         String password = E.encrypt("test",key);
         Driver driver = new Driver(username, password);
         db.driverDao().insertAll(driver);
@@ -51,36 +51,48 @@ public class MainActivity extends AppCompatActivity {
         List<Order> orderList = dbO.orderDao().getAllOrders();
         //dbO.clearAllTables();
         if(orderList.size() == 0){
-            String driv = "Joe";
-            String seats = "5";
-            String location = "test";
-            String petFriendly = "false";
+            String driver = "Joe";
+            String seats = "3";
+            String location = "Main St";
+            String petFriendly = "true";
             String accessibility = "false";
             String q1 = "No";
             String q2 ="No";
             String q3 = "Yes";
-            Order order1 = new Order(driv, seats,location, petFriendly,accessibility,q1,q2,q3);
+            Order order1 = new Order(driver, seats,location, petFriendly,accessibility,q1,q2,q3);
 
-            String drivv = "peter";
-            String seatss = "2";
-            String locationn = "test";
-            String petFriendlyy = "false";
-            String accessibilityy = "false";
+            String driverPeter = "Peter";
+            String seatsPeter = "2";
+            String locationPeter = "Broadway St";
+            String petFriendlyPeter = "false";
+            String accessibilityPeter = "true";
             String qu1 = "No";
             String qu2 ="Yes";
             String qu3 = "Yes";
-            Order order2 = new Order(drivv, seatss,locationn, petFriendlyy,accessibilityy,qu1,qu2,qu3);
+            Order order2 = new Order(driverPeter, seatsPeter,locationPeter, petFriendlyPeter,accessibilityPeter,qu1,qu2,qu3);
 
-            String drivvv = "Joe";
-            String seatsss = "5";
-            String locationnn = "test";
-            String petFriendlyyy = "false";
-            String accessibilityyy = "false";
+            String driverJoe = "John";
+            String seatsJoe = "5";
+            String locationJoe = "Main St";
+            String petFriendlyJoe = "false";
+            String accessibilityJoe = "false";
             String que1 = "Yes";
             String que2 ="Yes";
             String que3 = "No";
-            Order order3 = new Order(drivvv, seatsss,locationnn, petFriendlyyy,accessibilityyy,que1,que2,que3);
-            dbO.orderDao().insertAll(order1,order2,order3);
+            Order order3 = new Order(driverJoe, seatsJoe,locationJoe, petFriendlyJoe,accessibilityJoe,que1,que2,que3);
+
+            String driverKaylan = "Kaylan";
+            String seatsKaylan = "5";
+            String locationKaylan = "Main St";
+            String petFriendlyKaylan = "True";
+            String accessibilityKaylan = "True";
+            String ques1 = "Yes";
+            String ques2 ="Yes";
+            String ques3 = "Yes";
+            Order order4 = new Order(driverKaylan, seatsKaylan,locationKaylan, petFriendlyKaylan,accessibilityKaylan,ques1,ques2,ques3);
+
+
+            dbO.orderDao().insertAll(order1,order2,order3,order4);
         }
 
     }
@@ -97,16 +109,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void registration(View v){
         Intent i = new Intent(this, RegistrationActivity.class);
-        startActivity(i);
-    }
-
-    public void test(View v){
-        Intent i = new Intent(this, ArrivalActivity.class);
-        startActivity(i);
-    }
-
-    public void test1(View v){
-        Intent i = new Intent(this, ArrivalActivity.class);
         startActivity(i);
     }
 }
