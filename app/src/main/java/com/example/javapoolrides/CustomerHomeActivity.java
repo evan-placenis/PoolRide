@@ -9,6 +9,7 @@ import android.view.View;
 import com.example.javapoolrides.CustomerAccountActivities.ViewAccountDetailsActivity;
 import com.example.javapoolrides.CustomerRideActivities.RidePrefsActivity;
 import com.example.javapoolrides.CustomerRideActivities.ScheduleRideActivity;
+import com.example.javapoolrides.DriverRideActivities.RideHomeActivity;
 
 public class CustomerHomeActivity extends AppCompatActivity {
 
