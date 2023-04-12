@@ -77,6 +77,7 @@ public class CustomerRideActivity extends AppCompatActivity implements OnMapRead
     @Override
     public void onMapReady(GoogleMap googleMap) {
         LatLng mcmaster = new LatLng(43.26145, -79.91907);
+        //43.257989162119074, -79.8697699443705
         googleMap.addMarker(new MarkerOptions()
                 .position(mcmaster)
                 .title("Marker in Sydney"));
