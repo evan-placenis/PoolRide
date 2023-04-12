@@ -48,8 +48,8 @@ public class RatingActivity extends AppCompatActivity {
                     db.customerDao().update(customer);
                 }else{
                     int denominator = Integer.parseInt(customer.totalRating) + 1;
-                    int numerator = Integer.parseInt(customer.rating) + Integer.parseInt(rating);
-                    int newRating = numerator/denominator;
+                    float numerator = Float.parseFloat(customer.rating) + Float.parseFloat(rating);
+                    float newRating = numerator/denominator;
                     customer.updateRating(String.valueOf(newRating));
                     customer.updateTotalRating(String.valueOf(denominator));
                     db.customerDao().update(customer);
