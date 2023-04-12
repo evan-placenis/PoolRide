@@ -12,11 +12,14 @@ import com.example.javapoolrides.R;
 
 import org.w3c.dom.Text;
 
+import controllers.FareCalculator;
+
 public class ViewRideDetailsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FareCalculator fareCalculator = new FareCalculator();
         String pickup = getIntent().getStringExtra("pickup");
         String dropoff = getIntent().getStringExtra("dropoff");
         setContentView(R.layout.activity_view_ride_details);
@@ -25,6 +28,9 @@ public class ViewRideDetailsActivity extends AppCompatActivity {
         pickuploc.setText(pickup);
         TextView dropoffloc = ((TextView) findViewById(R.id.destination_tv));
         dropoffloc.setText(dropoff);
+        TextView fareText = ((TextView) findViewById(R.id.fare_tv));
+        float fare = Math.round(fareCalculator.calculateFare() * 100.0) / 100.0f;
+        fareText.setText("$" + Float.toString(fare));
     }
 
     public void home(View v){
