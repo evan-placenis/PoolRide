@@ -48,7 +48,9 @@ public class CustomerHomeActivity extends AppCompatActivity {
     }
 
     public void quit (View v) {
+        String username = getIntent().getStringExtra("username");
         Intent i = new Intent(this, MainActivity.class);
+        i.putExtra("username", username);
         startActivity(i);
     }
 

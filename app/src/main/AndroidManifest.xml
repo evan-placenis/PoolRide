@@ -32,8 +32,7 @@
             android:parentActivityName=".CustomerHomeActivity" />
         <activity
             android:name=".CustomerRideActivities.ViewRideDetailsActivity"
-            android:exported="false"
-            android:parentActivityName=".CustomerRideActivities.CustomerRideActivity" />
+            android:exported="false" />
         <activity
             android:name=".CustomerRideActivities.CustomerRideActivity"
             android:exported="false" />
